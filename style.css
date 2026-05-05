@@ -1,315 +1,37 @@
 /* ==========================================================================
-   1. 全局变量与重置
+   1. 全局变量与基础设置
    ========================================================================== */
 :root {
-    --primary-color: #ff6600;
-    --primary-hover: #e65c00;
-    --primary-light: rgba(255, 102, 0, 0.1);
-
+    --primary: #ff6600;
+    --primary-dark: #e65c00;
+    --primary-glow: rgba(255, 102, 0, 0.2);
     --text-main: #333;
-    --text-muted: #666;
+    --text-muted: #777;
     --bg-light: #f8f9fa;
-    --white: #fff;
-    --dark: #111;
-    --nav-bg: rgba(34, 34, 34, 0.9);
-
-    --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
-    --shadow-md: 0 10px 30px rgba(0,0,0,0.12);
-
+    --nav-bg: rgba(17, 17, 17, 0.9);
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --radius: 12px;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+html {
+    scroll-behavior: smooth;
 }
-
-/* 滚动条 */
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: var(--bg-light); }
-::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 10px;
-}
-::-webkit-scrollbar-thumb:hover {
-    background: var(--primary-color);
-}
-
-html { scroll-behavior: smooth; }
 
 body {
+    margin: 0;
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     background: var(--bg-light);
     color: var(--text-main);
     line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
 }
 
 /* ==========================================================================
-   2. Header & Navigation（兼容毛玻璃）
-   ========================================================================== */
-header {
-    background: var(--dark);
-    color: var(--white);
-    text-align: center;
-    padding: 80px 20px;
-}
-
-header h1 {
-    font-size: clamp(28px, 5vw, 42px);
-}
-
-header p {
-    color: #bbb;
-    margin-top: 12px;
-}
-
-/* 导航 */
-nav {
-    position: sticky;
-    top: 0;
-    background: rgba(34, 34, 34, 0.9); /* fallback */
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    padding: 18px;
-    text-align: center;
-    z-index: 1000;
-    box-shadow: var(--shadow-sm);
-}
-
-/* 不支持毛玻璃 */
-@supports not (backdrop-filter: blur(12px)) {
-    nav { background: #222; }
-}
-
-nav a {
-    color: var(--white);
-    margin: 0 18px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: var(--transition);
-    font-size: 0.95rem;
-}
-
-nav a:hover {
-    color: var(--primary-color);
-}
-
-/* ==========================================================================
-   3. Hero（性能优化 + 层级）
-   ========================================================================== */
-.hero {
-    position: relative;
-    padding: 140px 20px;
-    text-align: center;
-    color: var(--white);
-    background: #333 url('images/hero-bg.jpg') center/cover no-repeat;
-    overflow: hidden;
-}
-
-/* 移动端轻量图（如果有） */
-@media (max-width: 768px) {
-    .hero {
-        background-image: url('images/hero-bg-mobile.jpg');
-    }
-}
-
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.5);
-}
-
-.hero > * {
-    position: relative;
-    z-index: 1;
-}
-
-.hero h2 {
-    font-size: clamp(32px, 6vw, 48px);
-}
-
-/* ==========================================================================
-   4. Section（修复缺失）
-   ========================================================================== */
-.section {
-    padding: 80px 20px;
-    max-width: 1200px;
-    margin: auto;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 32px;
-}
-
-.section p {
-    max-width: 800px;
-    margin: auto;
-    color: var(--text-muted);
-}
-
-/* ==========================================================================
-   5. 产品模块（稳定+动画）
-   ========================================================================== */
-.products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-.card {
-    background: var(--white);
-    padding: 24px;
-    border-radius: var(--radius);
-    text-align: center;
-    border: 1px solid rgba(0,0,0,0.04);
-    transition: var(--transition);
-    cursor: pointer;
-    overflow: hidden;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-md);
-}
-
-.card img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-radius: calc(var(--radius) - 4px);
-    background: #eee;
-    display: block;
-    transition: transform 0.5s ease;
-}
-
-.card:hover img {
-    transform: scale(1.06);
-}
-
-/* 标题兼容截断 */
-.card h3 {
-    margin: 20px 0 10px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-/* ==========================================================================
-   6. 按钮系统
-   ========================================================================== */
-.btn {
-    padding: 14px 32px;
-    border-radius: var(--radius);
-    display: inline-block;
-    text-decoration: none;
-    font-weight: 600;
-    transition: var(--transition);
-    border: none;
-    cursor: pointer;
-    user-select: none;
-}
-
-.btn:active {
-    transform: scale(0.96);
-}
-
-.btn-primary {
-    background: var(--primary-color);
-    color: var(--white);
-}
-
-.btn-primary:hover {
-    background: var(--primary-hover);
-    box-shadow: 0 8px 20px rgba(255,102,0,0.3);
-}
-
-.btn-secondary {
-    background: transparent;
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
-}
-
-.btn-secondary:hover {
-    background: var(--primary-color);
-    color: white;
-}
-
-/* ==========================================================================
-   7. 表单（体验增强）
-   ========================================================================== */
-form {
-    max-width: 550px;
-    margin: 40px auto;
-}
-
-form input,
-form textarea {
-    width: 100%;
-    padding: 14px;
-    margin: 10px 0 15px;
-    border: 1.5px solid #eee;
-    border-radius: var(--radius);
-    font-size: 16px;
-    background: var(--white);
-    transition: var(--transition);
-}
-
-form input::placeholder,
-form textarea::placeholder {
-    color: #aaa;
-}
-
-form input:hover,
-form textarea:hover {
-    border-color: #ccc;
-}
-
-form input:focus,
-form textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 4px var(--primary-light);
-}
-
-/* ==========================================================================
-   8. WhatsApp（安全区域优化）
-   ========================================================================== */
-.whatsapp {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: #25D366;
-    color: white;
-    padding: 14px 24px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    box-shadow: 0 10px 25px rgba(37,211,102,0.3);
-    transition: var(--transition);
-    z-index: 9999;
-    max-width: calc(100% - 40px);
-}
-
-.whatsapp:hover {
-    transform: translateY(-5px) scale(1.05);
-}
-
-/* ==========================================================================
-   9. 动画（性能友好）
+   2. 动画系统
    ========================================================================== */
 .fade-in {
     opacity: 0;
     transform: translateY(30px);
-    transition: 0.8s ease;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .fade-in.show {
@@ -317,53 +39,302 @@ form textarea:focus {
     transform: translateY(0);
 }
 
-/* 减少动画用户 */
-@media (prefers-reduced-motion: reduce) {
-    .fade-in {
-        opacity: 1;
-        transform: none;
-        transition: none;
-    }
+/* ==========================================================================
+   3. Header（结构优化：避免 absolute 问题）
+   ========================================================================== */
+.header {
+    background: linear-gradient(180deg, #111, #1a1a1a);
+    color: white;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* 左侧 Logo */
+.header .logo {
+    height: 48px;
+}
+
+/* 中间品牌 */
+.header-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.header-center h1 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.header-center p {
+    margin: 4px 0 0;
+    font-size: 12px;
+    color: #bbb;
+    letter-spacing: 1px;
 }
 
 /* ==========================================================================
-   10. 响应式
+   4. 导航栏
+   ========================================================================== */
+nav {
+    position: sticky;
+    top: 0;
+    background: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    padding: 14px;
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+nav a {
+    color: rgba(255,255,255,0.7);
+    margin: 0 18px;
+    text-decoration: none;
+    font-size: 14px;
+    position: relative;
+    transition: var(--transition);
+}
+
+/* hover + active */
+nav a:hover,
+nav a.active {
+    color: var(--primary);
+}
+
+/* 下划线动画 */
+nav a::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transform: translateX(-50%);
+    transition: var(--transition);
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 80%;
+}
+
+/* 点击反馈 */
+nav a:active {
+    transform: scale(0.95);
+}
+
+/* ==========================================================================
+   5. Hero（移除 fixed 提升性能）
+   ========================================================================== */
+.hero {
+    padding: 120px 20px;
+    text-align: center;
+    color: white;
+    background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        url('images/hero-bg.jpg') center/cover no-repeat;
+}
+
+.hero h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 17px;
+    color: rgba(255,255,255,0.85);
+    max-width: 650px;
+    margin: auto;
+}
+
+/* ==========================================================================
+   6. 按钮系统
+   ========================================================================== */
+.btn {
+    background: var(--primary);
+    color: white;
+    padding: 14px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 20px;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px var(--primary-glow);
+}
+
+/* 可访问性 */
+.btn:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* ==========================================================================
+   7. Section
+   ========================================================================== */
+.section {
+    padding: 80px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.section:nth-child(even) {
+    background: white;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* ==========================================================================
+   8. 产品卡片（优化）
+   ========================================================================== */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.card img {
+    width: 100%;
+    aspect-ratio: 1/1; /* ✅ 修复产品比例 */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* ==========================================================================
+   9. 表单
+   ========================================================================== */
+form {
+    max-width: 500px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-glow);
+}
+
+/* 状态 */
+input.error {
+    border-color: red;
+}
+
+input.success {
+    border-color: green;
+}
+
+/* ==========================================================================
+   10. Footer
+   ========================================================================== */
+footer {
+    background: #111;
+    color: #888;
+    text-align: center;
+    padding: 30px;
+}
+
+/* ==========================================================================
+   11. WhatsApp CTA
+   ========================================================================== */
+.whatsapp {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: var(--transition);
+}
+
+.whatsapp:hover {
+    transform: scale(1.1);
+}
+
+/* 提示文字 */
+.whatsapp::after {
+    content: "Chat";
+    position: absolute;
+    bottom: -18px;
+    font-size: 12px;
+    color: #333;
+}
+
+/* ==========================================================================
+   12. 响应式
    ========================================================================== */
 @media (max-width: 768px) {
 
-    header { padding: 60px 20px; }
+    .header {
+        flex-direction: column;
+        gap: 10px;
+    }
 
-    nav {
-        padding: 12px 5px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+    .header-center {
+        position: static;
+        transform: none;
     }
 
     nav a {
-        margin: 5px 10px;
-        font-size: 14px;
-    }
-
-    .hero { padding: 100px 20px; }
-
-    .section { padding: 60px 20px; }
-
-    .whatsapp {
-        bottom: 20px;
-        right: 20px;
-        padding: 12px 20px;
+        margin: 0 8px;
         font-size: 13px;
     }
-}
 
-@media (max-width: 480px) {
-    .btn {
-        width: 100%;
-        margin-bottom: 10px;
+    .hero {
+        padding: 80px 20px;
     }
 
-    .card {
-        padding: 16px;
+    .hero h2 {
+        font-size: 26px;
     }
 }
