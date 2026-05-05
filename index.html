@@ -8,33 +8,44 @@
     <meta name="description" content="Velmora Tech is a trusted manufacturer of blenders, juicers, hair dryers, and kitchen appliances. OEM & ODM supported worldwide.">
     <meta name="keywords" content="blender manufacturer, juicer supplier, hair dryer factory, kitchen appliances OEM">
 
-    <!-- ✅ 网站图标（使用Logo） -->
+    <!-- 网站图标 -->
     <link rel="icon" href="images/logo.png">
 
     <style>
         html { scroll-behavior: smooth; }
         body { margin: 0; font-family: 'Segoe UI', sans-serif; background-color: #f8f9fa; }
 
-        /* ===== Header（带Logo） ===== */
-        header {
+        /* ===== ✅ 高级 Header（已优化） ===== */
+        .header {
+            position: relative;
             background: #111;
             color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
+            padding: 25px 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
         }
 
-        header img {
+        /* Logo 左侧 */
+        .header .logo {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
             height: 50px;
         }
 
-        header h1 {
+        /* 中间内容 */
+        .header-center {
+            display: inline-block;
+            text-align: center;
+        }
+
+        .header-center h1 {
             margin: 0;
             font-size: 24px;
         }
 
-        header p {
+        .header-center p {
             margin: 0;
             font-size: 14px;
             color: #ccc;
@@ -58,7 +69,7 @@
 
         nav a:hover { color: #ff6600; }
 
-        /* ===== Hero（加入Logo强化） ===== */
+        /* ===== Hero ===== */
         .hero {
             padding: 100px 20px;
             text-align: center;
@@ -148,10 +159,11 @@
 
 <body>
 
-<!-- ===== Header（Logo + 品牌） ===== -->
-<header>
-    <img src="images/logo.png" alt="Velmora Logo">
-    <div>
+<!-- ===== ✅ 新 Header ===== -->
+<header class="header">
+    <img src="images/logo.png" alt="Velmora Logo" class="logo">
+
+    <div class="header-center">
         <h1>Velmora Tech</h1>
         <p>Smart Living Starts Here</p>
     </div>
