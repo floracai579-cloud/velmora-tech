@@ -1,226 +1,207 @@
-/**
- * Velmora Tech - Production Ready Script
- * Version: Final (Conversion + Stability Optimized)
- */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-/* ===============================
-   1. 配置
-================================= */
-const CONFIG = {
-    EMAILJS: {
-        PUBLIC_KEY: "YOUR_PUBLIC_KEY",       // 🔥替换
-        SERVICE_ID: "service_q5z1c3x",       // ✅你的
-        TEMPLATE_ID: "YOUR_TEMPLATE_ID"      // 🔥替换
-    },
-    SCROLL: {
-        OFFSET: 140,
-        THRESHOLD: 0.15
-    },
-    WHATSAPP: "https://wa.me/8615810201140"
-};
+    <title>Velmora | Professional Small Appliance Manufacturer (OEM/ODM)</title>
+    <meta name="description" content="Velmora Tech is a leading manufacturer of blenders, juicers, hair dryers, and kitchen appliances. OEM & ODM supported worldwide.">
+    <meta name="keywords" content="blender manufacturer, juicer supplier, hair dryer factory, kitchen appliances OEM">
+    <meta name="author" content="Velmora Tech">
 
+    <link rel="icon" href="favicon.ico">
 
-/* ===============================
-   2. 初始化
-================================= */
-document.addEventListener("DOMContentLoaded", () => {
+    <style>
+        html { scroll-behavior: smooth; }
+        body { margin: 0; font-family: 'Segoe UI', sans-serif; background-color: #f8f9fa; }
 
-    if (typeof emailjs !== "undefined") {
-        emailjs.init(CONFIG.EMAILJS.PUBLIC_KEY);
-    } else {
-        console.error("EmailJS SDK not loaded");
-    }
+        header { background: #111; color: white; text-align: center; padding: 40px 20px; }
 
-    initForm();
-    initScrollReveal();
-    initSmartNav();
-    initYear();
-});
-
-
-/* ===============================
-   3. 表单系统（核心）
-================================= */
-function initForm() {
-    const form = document.getElementById("contact-form");
-    if (!form) return;
-
-    form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-
-        const btn = form.querySelector("button");
-        if (btn.disabled || btn.dataset.loading === "true") return;
-
-        // ===== EmailJS 安全检测 =====
-        if (typeof emailjs === "undefined") {
-            showToast("Email unavailable. Redirecting...");
-            setTimeout(() => window.open(CONFIG.WHATSAPP, "_blank"), 1500);
-            return;
+        nav {
+            position: sticky;
+            top: 0;
+            background: #222;
+            padding: 15px;
+            text-align: center;
+            z-index: 1000;
         }
 
-        const formData = new FormData(form);
+        nav a { color: white; margin: 0 15px; text-decoration: none; }
+        nav a:hover { color: #ff6600; }
 
-        const name = formData.get("user_name")?.trim();
-        const email = formData.get("user_email")?.trim();
-        const message = formData.get("message")?.trim();
-
-        // ===== 防机器人 =====
-        if (formData.get("company")) {
-            console.warn("Spam blocked");
-            return;
+        .hero {
+            padding: 100px 20px;
+            text-align: center;
+            color: white;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero-bg.jpg') center/cover;
+            background-color: #333;
         }
 
-        // ===== 表单验证 =====
-        if (!name || !email || !message) {
-            showToast("Please fill in all fields.");
-            return;
+        .btn {
+            background: #ff6600;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
         }
 
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailPattern.test(email)) {
-            showToast("Invalid email address.");
-            return;
+        .section { padding: 70px 20px; max-width: 1100px; margin: auto; }
+        h2 { text-align: center; }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+            gap: 25px;
         }
 
-        // ===== 状态锁定 =====
-        btn.dataset.loading = "true";
-        btn.disabled = true;
-
-        const originalHTML = btn.innerHTML;
-        btn.innerHTML = `<span class="loader"></span> Sending...`;
-
-        try {
-            await emailjs.sendForm(
-                CONFIG.EMAILJS.SERVICE_ID,
-                CONFIG.EMAILJS.TEMPLATE_ID,
-                form
-            );
-
-            showToast("✅ Inquiry sent! We will reply within 12 hours.");
-            form.reset();
-
-            // ===== GA 追踪 =====
-            if (typeof gtag === "function") {
-                gtag("event", "generate_lead", {
-                    event_category: "Contact",
-                    event_label: "Velmora Form"
-                });
-            }
-
-        } catch (error) {
-            console.error("EmailJS Error:", error);
-
-            showToast("❌ Failed. Redirecting to WhatsApp...");
-            setTimeout(() => {
-                window.open(CONFIG.WHATSAPP, "_blank");
-            }, 1500);
-        } finally {
-            btn.innerHTML = originalHTML;
-            btn.disabled = false;
-            btn.dataset.loading = "false";
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
         }
-    });
+
+        .card img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+        }
+
+        form { max-width: 500px; margin: auto; }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Velmora Tech</h1>
+    <p>Smart Living Starts Here</p>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#products">Products</a>
+    <a href="#why">Why Us</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section class="hero">
+    <h2>Reliable Small Appliance Manufacturer</h2>
+    <p>OEM & ODM Supplier for Global Markets</p>
+    <a href="#contact" class="btn">Get Quote Now</a>
+</section>
+
+<!-- About -->
+<section id="about" class="section">
+    <h2>About Us</h2>
+    <p style="text-align:center; max-width:800px; margin:auto; line-height:1.8;">
+        Velmora Tech is a trusted manufacturer of blenders, juicers, and kitchen appliances.
+        <br><br>
+        We help our partners create competitive products with dependable quality, flexible OEM/ODM, and fast, reliable delivery.
+        <br><br>
+        We don’t just make products — we help you succeed in your market.
+    </p>
+</section>
+
+<!-- Products -->
+<section id="products" class="section">
+    <h2>Our Products</h2>
+    <div class="products">
+
+        <div class="card">
+            <img src="images/blender.png" alt="Hand Blender Velmora" loading="lazy">
+            <h3>Blenders</h3>
+            <a href="#contact" class="btn">Inquiry</a>
+        </div>
+
+        <div class="card">
+            <img src="images/juicer.png" alt="Juicer Velmora" loading="lazy">
+            <h3>Juicers</h3>
+            <a href="#contact" class="btn">Inquiry</a>
+        </div>
+
+        <div class="card">
+            <img src="images/hairdryer.png" alt="Hair Dryer Velmora" loading="lazy">
+            <h3>Hair Dryers</h3>
+            <a href="#contact" class="btn">Inquiry</a>
+        </div>
+
+        <div class="card">
+            <img src="images/lunchbox.png" alt="Electric Lunch Box Velmora" loading="lazy">
+            <h3>Lunch Boxes</h3>
+            <a href="#contact" class="btn">Inquiry</a>
+        </div>
+
+    </div>
+</section>
+
+<section id="why" class="section">
+    <h2>Why Choose Us</h2>
+    <p style="text-align:center;">
+        CE & RoHS Certified | Exported to USA & Europe | OEM & ODM Supported
+    </p>
+</section>
+
+<section id="contact" class="section">
+    <h2>Contact Us</h2>
+
+    <p style="text-align:center;">
+        Email: sales@velmora-tech.com <br>
+        WhatsApp: +86 15810201140
+    </p>
+
+    <form onsubmit="handleSubmit(event)">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Inquiry"></textarea>
+        <button class="btn">Send Inquiry</button>
+    </form>
+
+    <p style="text-align:center;">
+        <a href="catalog.pdf" target="_blank">Download Catalog</a>
+    </p>
+</section>
+
+<footer>
+    <p>© 2026 Velmora Tech</p>
+</footer>
+
+<a href="https://wa.me/8615810201140" class="whatsapp">W</a>
+
+<script>
+function handleSubmit(e) {
+    e.preventDefault();
+    alert("Thank you! We will contact you within 24 hours.");
 }
+</script>
 
-
-/* ===============================
-   4. Toast（优化版）
-================================= */
-function showToast(message) {
-    const old = document.querySelector(".velmora-toast");
-    if (old) old.remove();
-
-    const toast = document.createElement("div");
-    toast.className = "velmora-toast";
-    toast.innerText = message;
-
-    Object.assign(toast.style, {
-        position: "fixed",
-        bottom: window.innerWidth < 600 ? "80px" : "40px",
-        left: "50%",
-        transform: "translateX(-50%) translateY(20px)",
-        background: "rgba(20,20,20,0.95)",
-        color: "#fff",
-        padding: "14px 26px",
-        borderRadius: "10px",
-        zIndex: "9999",
-        opacity: "0",
-        transition: "0.3s",
-        fontSize: "14px",
-        boxShadow: "0 10px 30px rgba(0,0,0,0.3)"
-    });
-
-    document.body.appendChild(toast);
-
-    requestAnimationFrame(() => {
-        toast.style.opacity = "1";
-        toast.style.transform = "translateX(-50%) translateY(0)";
-    });
-
-    setTimeout(() => {
-        toast.style.opacity = "0";
-        toast.style.transform = "translateX(-50%) translateY(20px)";
-        setTimeout(() => toast.remove(), 300);
-    }, 3000);
-}
-
-
-/* ===============================
-   5. 滚动动画（兼容版）
-================================= */
-function initScrollReveal() {
-    if (!("IntersectionObserver" in window)) {
-        document.querySelectorAll(".fade-in").forEach(el => el.classList.add("show"));
-        return;
-    }
-
-    const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("show");
-                obs.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: CONFIG.SCROLL.THRESHOLD
-    });
-
-    document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
-}
-
-
-/* ===============================
-   6. 导航高亮（稳定版）
-================================= */
-function initSmartNav() {
-    const sections = document.querySelectorAll("section[id]");
-    const links = document.querySelectorAll("nav a");
-
-    window.addEventListener("scroll", () => {
-        let current = "";
-        const scrollY = window.pageYOffset;
-
-        sections.forEach(sec => {
-            const top = sec.offsetTop - CONFIG.SCROLL.OFFSET;
-            const height = sec.offsetHeight;
-
-            if (scrollY >= top && scrollY < top + height) {
-                current = sec.id;
-            }
-        });
-
-        links.forEach(link => {
-            link.classList.toggle("active", link.getAttribute("href") === "#" + current);
-        });
-
-    }, { passive: true });
-}
-
-
-/* ===============================
-   7. 自动年份
-================================= */
-function initYear() {
-    const el = document.getElementById("year");
-    if (el) el.textContent = new Date().getFullYear();
-}
+</body>
+</html>
