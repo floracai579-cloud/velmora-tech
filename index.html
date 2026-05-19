@@ -1,386 +1,359 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Velmora | 智能厨房小家电制造商</title>
-    <meta name="description" content="Velmora Tech 专注奶泡机、空气炸锅、搅拌机与电动咖啡研磨机，提供 OEM/ODM 全球合作。">
-    <meta name="keywords" content="奶泡机,空气炸锅,搅拌机,电动咖啡研磨机,OEM,ODM">
-    <link rel="icon" href="images/logo.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Velmora | Smart Living Starts Here</title>
+  <link rel="icon" href="images/logo.png" />
+  <style>
+    :root {
+      --accent: #ff6900;
+      --text: #111827;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --bg: #ffffff;
+      --soft: #f8fafc;
+    }
 
-    <style>
-        :root {
-codex/optimize-website-with-new-products-72s461
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+    }
+    a { color: inherit; text-decoration: none; }
 
-            --bg: #0f0f12;
-main
-            --text: #111;
-            --muted: #666;
-            --primary: #ff6900;
-            --card-bg: #fff;
-            --radius: 18px;
-codex/optimize-website-with-new-products-72s461
-        }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-        * { box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            margin: 0;
-            font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-            color: var(--text);
-            background: #f5f5f7;
-        }
+    header {
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+    }
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .logo img {
+      height: 30px;
+      width: auto;
+      display: block;
+      object-fit: contain;
+    }
+    .links {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex: 1;
+      flex-wrap: wrap;
+    }
+    .links a {
+      font-size: 14px;
+      color: #1f2937;
+    }
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .search-btn {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    .btn {
+      height: 40px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+    .btn-light {
+      background: #fff;
+      border-color: var(--line);
+    }
 
-        .header {
-            position: sticky;
-            top: 0;
-            z-index: 20;
-            background: rgba(15, 15, 18, 0.9);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255,255,255,.08);
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding: 14px 5vw;
-            min-height: 72px;
-        }
+    .hero {
+      background: linear-gradient(120deg, #f8fafc, #eef2f7);
+      padding: 56px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: 48px;
+    }
+    .hero h2 {
+      margin: 0 0 14px;
+      color: #111;
+      font-size: 26px;
+    }
+    .hero p {
+      margin: 0 0 22px;
+      color: var(--muted);
+      max-width: 680px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
 
-        .header-logo {
-            width: 42px;
-            height: 42px;
-            border-radius: 10px;
-            position: absolute;
-            left: 5vw;
-            top: 50%;
-            transform: translateY(-50%);
-        }
+    section { padding: 52px 0; }
+    .section-title {
+      margin: 0 0 18px;
+      font-size: 30px;
+      text-align: left;
+    }
 
-        .header-title {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            color: #fff;
-            font-size: 22px;
-            font-weight: 600;
-            letter-spacing: .4px;
-            white-space: nowrap;
-        }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      background: var(--soft);
+      display: block;
+    }
+    .card-body { padding: 14px; }
+    .card h4 {
+      margin: 0 0 8px;
+      font-size: 20px;
+    }
+    .card p {
+      margin: 0 0 12px;
+      color: var(--muted);
+      min-height: 40px;
+    }
 
-        .lang-switch {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            margin-right: 18px;
-            padding-right: 18px;
-            border-right: 1px solid rgba(255,255,255,.18);
-        }
+    .oem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+    .oem-item {
+      border: 1px solid var(--line);
+      background: var(--soft);
+      border-radius: 12px;
+      padding: 16px;
+      font-weight: 600;
+    }
 
-        .lang-switch a {
-            color: rgba(255,255,255,.78);
-            text-decoration: none;
-            font-size: 12px;
-            letter-spacing: .2px;
-        }
+    .contact {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 20px;
+    }
+    .contact p { margin: 8px 0; }
 
-        .lang-switch a.active-lang {
-            color: #fff;
-            font-weight: 600;
+    footer {
+      border-top: 1px solid var(--line);
+      color: #6b7280;
+      padding: 24px 0 34px;
+    }
 
-        }
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(17, 24, 39, 0.5);
+      display: none;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 8vh 16px;
+    }
+    .overlay.open { display: flex; }
+    .panel {
+      width: min(760px, 100%);
+      background: #fff;
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    }
+    .panel input {
+      width: 100%;
+      height: 46px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 0 12px;
+      font-size: 16px;
+    }
+    .results {
+      margin-top: 12px;
+      display: grid;
+      gap: 8px;
+    }
+    .result {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px;
+      background: #fff;
+    }
 
-        * { box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            margin: 0;
-            font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-            color: var(--text);
-            background: #f5f5f7;
-        }
-
-        .header {
-            position: sticky;
-            top: 0;
-            z-index: 20;
-            background: rgba(15, 15, 18, 0.9);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255,255,255,.08);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 14px 5vw;
-main
-        }
-
-        .brand { display: flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; }
-        .brand img { width: 34px; height: 34px; border-radius: 8px; }
-        .brand strong { font-size: 18px; }
-
-        nav a {
-            color: rgba(255,255,255,.86);
-            text-decoration: none;
-            margin-left: 20px;
-            font-size: 14px;
-        }
-        nav a:hover { color: var(--primary); }
-
-        .hero {
-            background: linear-gradient(120deg, #151519, #20232d);
-            color: #fff;
-            padding: 84px 5vw 64px;
-        }
-
-        .hero-grid {
-            display: grid;
-            gap: 28px;
-            grid-template-columns: 1.2fr .8fr;
-            max-width: 1200px;
-            margin: auto;
-            align-items: center;
-        }
-
-        .hero h1 { font-size: clamp(32px, 4vw, 52px); margin: 0 0 16px; }
-        .hero p { color: rgba(255,255,255,.78); max-width: 620px; font-size: 18px; margin: 0; }
-        .hero .cta { margin-top: 28px; display: inline-block; background: var(--primary); color: #fff; padding: 12px 26px; border-radius: 999px; text-decoration: none; }
-codex/optimize-website-with-new-products-72s461
-
-        .hero .cta:hover { filter: brightness(1.06); }
-main
-
-        .hero-panel {
-            background: linear-gradient(160deg, rgba(255,255,255,.1), rgba(255,255,255,.03));
-            border: 1px solid rgba(255,255,255,.14);
-            border-radius: var(--radius);
-            padding: 24px;
-        }
-
-        .hero-panel h3 { margin: 0 0 14px; }
-        .hero-panel ul { margin: 0; padding-left: 18px; color: rgba(255,255,255,.85); line-height: 1.8; }
-
-        .section { max-width: 1200px; margin: auto; padding: 70px 5vw; }
-        .section-title { text-align: center; margin-bottom: 36px; font-size: 32px; }
-
-        .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: var(--card-bg);
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: 0 10px 28px rgba(12, 12, 15, 0.07);
-            transition: transform .25s ease, box-shadow .25s ease;
-codex/optimize-website-with-new-products-72s461
-        }
-        .card:hover { transform: translateY(-6px); box-shadow: 0 16px 34px rgba(12,12,15,.14); }
-
-        .card img { width: 100%; height: 230px; object-fit: cover; display: block; }
-        .card-content { padding: 18px; }
-        .card h3 { margin: 0 0 8px; font-size: 20px; }
-        .card p { margin: 0; color: var(--muted); font-size: 14px; }
-
-        .stats {
-            background: #fff;
-            border-radius: var(--radius);
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            padding: 24px;
-            text-align: center;
-        }
-
-        .stats strong { display: block; font-size: 30px; color: var(--primary); }
-        .stats span { color: var(--muted); font-size: 14px; }
-
-
-        }
-        .card:hover { transform: translateY(-6px); box-shadow: 0 16px 34px rgba(12,12,15,.14); }
-
-        .card img { width: 100%; height: 230px; object-fit: cover; display: block; }
-        .card-content { padding: 18px; }
-        .card h3 { margin: 0 0 8px; font-size: 20px; }
-        .card p { margin: 0; color: var(--muted); font-size: 14px; }
-
-        .stats {
-            background: #fff;
-            border-radius: var(--radius);
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            padding: 24px;
-            text-align: center;
-        }
-        .stats strong { display: block; font-size: 30px; color: var(--primary); }
-        .stats span { color: var(--muted); font-size: 14px; }
-
-main
-        .contact {
-            text-align: center;
-            background: #111;
-            color: #fff;
-            border-radius: var(--radius);
-            padding: 42px 24px;
-        }
-
-        .contact a { color: #fff; }
-        .whatsapp {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            background: #25d366;
-            color: #fff;
-            display: grid;
-            place-items: center;
-            text-decoration: none;
-            font-weight: 700;
-        }
-
-        footer { text-align: center; color: #888; padding: 22px 0 40px; }
-
-        @media (max-width: 900px) {
-            .hero-grid { grid-template-columns: 1fr; }
-            .stats { grid-template-columns: 1fr; }
-            nav { display: none; }
-codex/optimize-website-with-new-products-72s461
-            .header-title { font-size: 18px; }
-
-main
-        }
-    </style>
+    @media (max-width: 860px) {
+      .container { padding: 0 16px; }
+      .hero h1 { font-size: 38px; }
+      .hero h2 { font-size: 22px; }
+    }
+  </style>
 </head>
 <body>
-<header class="header">
-codex/optimize-website-with-new-products-72s461
-    <img src="logo.png" alt="Velmora Logo" class="header-logo">
-    <div class="header-title">Velmora Tech</div>
-    <nav>
-        <span class="lang-switch" aria-label="语言设置">
-            <a href="/?lang=en" class="active-lang" lang="en">English</a>
-            <a href="/?lang=zh-CN" lang="zh-CN">中文</a>
-            <a href="/?lang=es" lang="es">Español</a>
-            <a href="/?lang=fr" lang="fr">Français</a>
-            <a href="/?lang=de" lang="de">Deutsch</a>
-            <a href="/?lang=it" lang="it">Italiano</a>
-        </span>
-
-    <a href="#" class="brand">
-        <img src="images/logo.png" alt="Velmora Logo">
-        <strong>Velmora Tech</strong>
-    </a>
-    <nav>
-main
-        <a href="#about">关于我们</a>
-        <a href="#products">产品</a>
-        <a href="#contact">联系</a>
-    </nav>
-</header>
-
-<section class="hero">
-    <div class="hero-grid">
-        <div>
-codex/optimize-website-with-new-products-72s461
-            <img src="logo.png" alt="Velmora 标志" style="width:120px;border-radius:16px;margin-bottom:16px;">
-
-main
-            <h1>像旗舰品牌一样展示产品力</h1>
-            <p>参考国际品牌官网风格，聚焦高颜值视觉与清晰卖点，帮助采购商快速了解您的核心产品与制造能力。</p>
-            <a class="cta" href="#products">查看产品矩阵</a>
-        </div>
-        <aside class="hero-panel">
-            <h3>核心制造能力</h3>
-            <ul>
-                <li>支持 OEM / ODM 定制开发</li>
-                <li>符合 CE / RoHS 等出口标准</li>
-                <li>打样快，交付稳，售后响应快</li>
-            </ul>
-        </aside>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="#top"><img src="images/logo.png" alt="Velmora logo" /></a>
+      <nav class="links">
+        <a href="#products">Kitchen Appliances</a>
+        <a href="#products">Coffee Appliances</a>
+        <a href="#oem">Smart Living</a>
+        <a href="#oem">OEM/ODM</a>
+        <a href="#oem">Support</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="actions">
+        <button id="openSearch" class="search-btn" aria-label="Search">⌕</button>
+        <a href="#contact" class="btn btn-primary">Get Quote</a>
+      </div>
     </div>
-</section>
+  </header>
 
-<section id="about" class="section">
-    <h2 class="section-title">Velmora 智能厨房解决方案</h2>
-    <div class="stats">
-        <div><strong>20+</strong><span>出口国家和地区</span></div>
-        <div><strong>OEM</strong><span>深度合作模式</span></div>
-        <div><strong>24H</strong><span>快速商务响应</span></div>
+  <section class="hero" id="top">
+    <div class="container">
+      <h1>Velmora</h1>
+      <h2>Smart Living Starts Here</h2>
+      <p>Smart kitchen appliances designed for global OEM/ODM partners.</p>
+      <div class="hero-actions">
+        <a href="#products" class="btn btn-primary">View Products</a>
+        <a href="#contact" class="btn btn-light">Contact Us</a>
+      </div>
     </div>
-</section>
+  </section>
 
-<section id="products" class="section">
-    <h2 class="section-title">明星产品</h2>
-    <div class="products">
+  <section id="products">
+    <div class="container">
+      <h3 class="section-title">Products</h3>
+      <div class="products">
         <article class="card">
-codex/optimize-website-with-new-products-72s461
-            <img src="dryer.jpg" alt="奶泡机">
-            <div class="card-content">
-                <h3>奶泡机</h3>
-                <p>细腻奶泡与一键启动，轻松提升咖啡与甜品制作体验。</p>
-
-            <img src="blender.jpg" alt="奶泡机">
-            <div class="card-content">
-                <h3>奶泡机</h3>
-                <p>细腻奶泡，一键冷热双模式，适配家庭与咖啡馆场景。</p>
-main
-            </div>
+          <img src="images/milk-frother.png" alt="Milk Frother" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('afterbegin','<div style=\'height:220px;display:grid;place-items:center;background:#f8fafc;color:#6b7280\'>Image unavailable</div>')" />
+          <div class="card-body"><h4>Milk Frother</h4><p>Rich, silky foam in seconds for café-style beverages.</p><a class="btn btn-primary" href="#contact">Send Inquiry</a></div>
         </article>
-
         <article class="card">
-            <img src="lunchbox.jpg" alt="空气炸锅">
-            <div class="card-content">
-                <h3>空气炸锅</h3>
-codex/optimize-website-with-new-products-72s461
-                <p>高速热风循环，低油烹饪同样酥脆，支持多菜单智能操控。</p>
-                <p>高速热风循环，低油健康烹饪，大容量可视化窗口。</p>
-main
-            </div>
+          <img src="images/air-fryer.png" alt="Air Fryer" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('afterbegin','<div style=\'height:220px;display:grid;place-items:center;background:#f8fafc;color:#6b7280\'>Image unavailable</div>')" />
+          <div class="card-body"><h4>Air Fryer</h4><p>Crispy cooking with less oil and precise temperature control.</p><a class="btn btn-primary" href="#contact">Send Inquiry</a></div>
         </article>
-
         <article class="card">
-codex/optimize-website-with-new-products-72s461
-            <img src="blender.jpg" alt="搅拌机">
-            <div class="card-content">
-                <h3>搅拌机</h3>
-                <p>高转速刀组快速破壁，果昔、冰沙、辅食都能高效完成。</p>
-
-            <img src="juicer.jpg" alt="搅拌机">
-            <div class="card-content">
-                <h3>搅拌机</h3>
-                <p>高扭矩电机与多档调速，适配果昔、冰沙与辅食制作。</p>
-main
-            </div>
+          <img src="images/personal-blender.png" alt="Personal Blender" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('afterbegin','<div style=\'height:220px;display:grid;place-items:center;background:#f8fafc;color:#6b7280\'>Image unavailable</div>')" />
+          <div class="card-body"><h4>Personal Blender</h4><p>Compact, high-speed blending for daily nutrition.</p><a class="btn btn-primary" href="#contact">Send Inquiry</a></div>
         </article>
-
         <article class="card">
-codex/optimize-website-with-new-products-72s461
-            <img src="juicer.jpg" alt="电动咖啡研磨机">
-            <div class="card-content">
-                <h3>电动咖啡研磨机</h3>
-                <p>多档研磨颗粒可调，保证萃取稳定，满足手冲与意式需求。</p>
-
-            <img src="dryer.jpg" alt="电动咖啡研磨机">
-            <div class="card-content">
-                <h3>电动咖啡研磨机</h3>
-                <p>均匀研磨与多刻度调节，提升手冲与意式萃取稳定性。</p>
-main
-            </div>
+          <img src="images/coffee-maker.png" alt="Coffee Maker" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('afterbegin','<div style=\'height:220px;display:grid;place-items:center;background:#f8fafc;color:#6b7280\'>Image unavailable</div>')" />
+          <div class="card-body"><h4>Coffee Maker</h4><p>Reliable extraction and easy operation for consistent flavor.</p><a class="btn btn-primary" href="#contact">Send Inquiry</a></div>
         </article>
+      </div>
     </div>
-</section>
+  </section>
 
-<section id="contact" class="section">
-    <div class="contact">
-        <h2>联系 Velmora</h2>
-        <p>Email: sales@velmora-tech.com<br>WhatsApp: +86 15810201140</p>
-        <p><a href="https://wa.me/8615810201140" target="_blank" rel="noopener">立即咨询</a></p>
+  <section id="oem">
+    <div class="container">
+      <h3 class="section-title">OEM/ODM Advantages</h3>
+      <div class="oem-grid">
+        <div class="oem-item">OEM/ODM Support</div>
+        <div class="oem-item">Export-ready Quality</div>
+        <div class="oem-item">Flexible Customization</div>
+        <div class="oem-item">Fast Response</div>
+      </div>
     </div>
-</section>
+  </section>
 
-<footer>© 2026 Velmora Tech. All rights reserved.</footer>
-<a href="https://wa.me/8615810201140" class="whatsapp" aria-label="WhatsApp">W</a>
+  <section id="contact">
+    <div class="container">
+      <h3 class="section-title">Contact</h3>
+      <div class="contact">
+        <p>Email: <a href="mailto:sales@velmora-tech.com">sales@velmora-tech.com</a></p>
+        <p>WhatsApp: <a href="https://wa.me/8615810201140" target="_blank" rel="noopener">+86 15810201140</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">© 2026 Velmora. All rights reserved.</div>
+  </footer>
+
+  <div class="overlay" id="searchOverlay">
+    <div class="panel" role="dialog" aria-label="Search panel">
+      <input id="searchInput" placeholder="Search products" />
+      <div id="searchResults" class="results"></div>
+    </div>
+  </div>
+
+  <script>
+    const searchItems = [
+      { title: 'Milk Frother', target: '#products' },
+      { title: 'Air Fryer', target: '#products' },
+      { title: 'Personal Blender', target: '#products' },
+      { title: 'Coffee Maker', target: '#products' },
+      { title: 'OEM/ODM', target: '#oem' },
+      { title: 'Contact', target: '#contact' }
+    ];
+
+    const overlay = document.getElementById('searchOverlay');
+    const openBtn = document.getElementById('openSearch');
+    const input = document.getElementById('searchInput');
+    const results = document.getElementById('searchResults');
+
+    function renderResults(query) {
+      const q = query.trim().toLowerCase();
+      const matched = searchItems.filter(item => item.title.toLowerCase().includes(q));
+      results.innerHTML = matched.length
+        ? matched.map(item => `<a class="result" href="${item.target}">${item.title}</a>`).join('')
+        : '<div class="result">No results found.</div>';
+      results.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          overlay.classList.remove('open');
+          document.querySelector(link.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+    }
+
+    openBtn.addEventListener('click', () => {
+      overlay.classList.add('open');
+      input.focus();
+      renderResults('');
+    });
+
+    input.addEventListener('input', () => renderResults(input.value));
+
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) overlay.classList.remove('open');
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') overlay.classList.remove('open');
+    });
+  </script>
 </body>
 </html>
