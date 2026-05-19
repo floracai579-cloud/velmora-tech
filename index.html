@@ -10,7 +10,6 @@
 
     <style>
         :root {
-            --bg: #0f0f12;
             --text: #111;
             --muted: #666;
             --primary: #ff6900;
@@ -38,9 +37,9 @@
             align-items: center;
             justify-content: flex-end;
             padding: 14px 5vw;
+            min-height: 72px;
         }
 
-        
         .header-logo {
             width: 42px;
             height: 42px;
@@ -110,7 +109,6 @@
         .hero h1 { font-size: clamp(32px, 4vw, 52px); margin: 0 0 16px; }
         .hero p { color: rgba(255,255,255,.78); max-width: 620px; font-size: 18px; margin: 0; }
         .hero .cta { margin-top: 28px; display: inline-block; background: var(--primary); color: #fff; padding: 12px 26px; border-radius: 999px; text-decoration: none; }
-        .hero .cta:hover { filter: brightness(1.06); }
 
         .hero-panel {
             background: linear-gradient(160deg, rgba(255,255,255,.1), rgba(255,255,255,.03));
@@ -154,6 +152,7 @@
             padding: 24px;
             text-align: center;
         }
+
         .stats strong { display: block; font-size: 30px; color: var(--primary); }
         .stats span { color: var(--muted); font-size: 14px; }
 
@@ -197,12 +196,12 @@
     <div class="header-title">Velmora Tech</div>
     <nav>
         <span class="lang-switch" aria-label="语言设置">
-            <a href="#" class="active-lang" lang="en">English</a>
-            <a href="#" lang="zh-CN">中文</a>
-            <a href="#" lang="es">Español</a>
-            <a href="#" lang="fr">Français</a>
-            <a href="#" lang="de">Deutsch</a>
-            <a href="#" lang="it">Italiano</a>
+            <a href="/?lang=en" class="active-lang" lang="en">English</a>
+            <a href="/?lang=zh-CN" lang="zh-CN">中文</a>
+            <a href="/?lang=es" lang="es">Español</a>
+            <a href="/?lang=fr" lang="fr">Français</a>
+            <a href="/?lang=de" lang="de">Deutsch</a>
+            <a href="/?lang=it" lang="it">Italiano</a>
         </span>
         <a href="#about">关于我们</a>
         <a href="#products">产品</a>
