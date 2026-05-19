@@ -7,156 +7,52 @@
   <meta name="description" content="Velmora Smart Kitchen Collection for global OEM/ODM partners." />
   <link rel="icon" href="images/logo.png" />
   <style>
-    :root{--text:#111827;--muted:#6b7280;--line:#e5e7eb;--bg:#f5f5f7;--card:#fff;--black:#111;--brand:#ff6900}
-    *{box-sizing:border-box} body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text)} a{text-decoration:none;color:inherit}
-    .container{max-width:1220px;margin:0 auto;padding:0 20px}
-    .top-market,.announce{display:block}.hidden{display:none !important}
-    .top-market{background:#fff;border-bottom:1px solid var(--line)} .top-row{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:10px 0}
-    .market-left{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.market-title{font-size:14px;color:#374151}.market-select{padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:#fff}
-    .btn{padding:10px 18px;border-radius:999px;border:1px solid transparent;font-weight:600;display:inline-block}.btn-primary{background:var(--brand);color:#fff}.btn-light{background:#fff;border-color:var(--line)}
-    .icon-btn{border:1px solid var(--line);background:#fff;border-radius:8px;padding:8px 10px;cursor:pointer}
-    .announce{background:#000;color:#fff}.announce .top-row{padding:10px 0}.announce p{margin:0;font-size:14px;color:#e5e7eb}
-    .nav-wrap{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
-    .nav{display:grid;grid-template-columns:1fr 2fr 1.5fr;align-items:center;min-height:72px;gap:10px}
-    .logo img{height:30px}.center-nav,.right-nav{display:flex;gap:16px;align-items:center;justify-content:center}.right-nav{justify-content:flex-end}
-    .center-nav a,.right-nav a{font-size:14px;color:#1f2937}
-    .search{font-size:18px;line-height:1}
-    .collection{background:#fafafa;border-bottom:1px solid var(--line)} .collection-row{display:flex;justify-content:space-between;align-items:center;padding:14px 0;gap:14px}
-    .collection-left strong{display:block}.collection-left span{font-size:13px;color:var(--muted)} .collection-links{display:flex;gap:16px;font-size:14px;color:#374151}
+    :root{--text:#111827;--muted:#6b7280;--line:#e5e7eb;--bg:#f5f5f7;--card:#fff;--brand:#ff6900;--black:#000}
+    *{box-sizing:border-box}html,body{margin:0;padding:0}body{font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text)}a{text-decoration:none;color:inherit}
+    .container{max-width:1220px;margin:0 auto;padding:0 20px}.hidden{display:none!important}
+    .market{background:#fff;border-bottom:1px solid var(--line)}.row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0}
+    .market-left{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.market-text{font-size:14px;color:#374151}
+    select{padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:#fff}
+    .btn{display:inline-block;padding:10px 16px;border-radius:999px;font-weight:600;border:1px solid transparent}.btn-primary{background:var(--brand);color:#fff}.btn-light{background:#fff;border-color:var(--line)}
+    .close{border:1px solid var(--line);padding:6px 10px;background:#fff;border-radius:8px;cursor:pointer}
+    .announce{background:var(--black);color:#fff}.announce p{margin:0;color:#e5e7eb;font-size:14px}
+    .nav-wrap{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}.nav{min-height:72px;display:grid;grid-template-columns:1fr 2fr 1.5fr;gap:10px;align-items:center}
+    .logo img{height:30px}.center,.right{display:flex;gap:16px;align-items:center;justify-content:center}.right{justify-content:flex-end}
+    .center a,.right a{font-size:14px;color:#1f2937}.search{font-size:18px}
+    .subnav{background:#fafafa;border-bottom:1px solid var(--line)}.subrow{display:flex;justify-content:space-between;align-items:center;padding:14px 0;gap:14px}
+    .subleft strong{display:block}.subleft span{font-size:13px;color:var(--muted)}.sublinks{display:flex;gap:16px;font-size:14px;color:#374151}
     .hero{background:linear-gradient(120deg,#171b24,#2a3140);color:#fff;padding:66px 0}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center}
-    .hero h1{font-size:clamp(30px,4.8vw,56px);margin:0 0 12px}.hero p{margin:0 0 24px;color:#d1d5db;max-width:640px;line-height:1.55}.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-    .hero img{width:100%;display:block;border-radius:18px}
-    .section{padding:58px 0}.section h2{font-size:34px;margin:0 0 22px;text-align:center}
-    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 6px 18px rgba(17,24,39,.06)} .card img{width:100%;height:220px;object-fit:cover}
-    .card-body{padding:14px}.card h3{margin:0 0 8px}.card p{margin:0 0 14px;color:var(--muted);min-height:40px}.card-actions{display:flex;gap:10px;flex-wrap:wrap}
-    .oem,.contact{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px}.oem p,.contact p{color:#374151}
+    .hero h1{font-size:clamp(30px,4.8vw,56px);margin:0 0 12px}.hero p{margin:0 0 24px;color:#d1d5db;max-width:640px;line-height:1.55}.actions{display:flex;gap:12px;flex-wrap:wrap}
+    .img-fallback{width:100%;background:linear-gradient(135deg,#eceff3,#d9dee7);display:block;object-fit:cover}.hero-img{height:380px;border-radius:18px}
+    .section{padding:58px 0}.section h2{font-size:34px;margin:0 0 22px;text-align:center}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 6px 18px rgba(17,24,39,.06)}.card img{height:220px}.card-body{padding:14px}.card p{color:var(--muted);min-height:42px}.card-actions{display:flex;gap:10px;flex-wrap:wrap}
+    .panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px}.panel p{color:#374151}
     footer{text-align:center;color:#6b7280;padding:26px 0 40px}
-    @media (max-width:1050px){.nav{grid-template-columns:1fr}.center-nav,.right-nav{justify-content:flex-start;flex-wrap:wrap;padding-bottom:10px}}
-    @media (max-width:860px){.hero-grid{grid-template-columns:1fr}.collection-row{flex-direction:column;align-items:flex-start}.market-title{width:100%}}
+    @media (max-width:1050px){.nav{grid-template-columns:1fr}.center,.right{justify-content:flex-start;flex-wrap:wrap;padding-bottom:8px}}
+    @media (max-width:860px){.hero-grid{grid-template-columns:1fr}.subrow{flex-direction:column;align-items:flex-start}}
   </style>
 </head>
 <body>
-  <section class="top-market" id="marketBar">
-    <div class="container top-row">
-      <div class="market-left">
-        <span class="market-title" data-i18n="marketTitle">Choose your market and language</span>
-        <select id="langSelect" class="market-select" aria-label="Choose market and language">
-          <option value="en">Global / English</option>
-          <option value="es">España / Español</option>
-          <option value="fr">France / Français</option>
-          <option value="de">Deutschland / Deutsch</option>
-          <option value="it">Italia / Italiano</option>
-          <option value="zh">中国 / 中文</option>
-        </select>
-        <button class="btn btn-primary" id="continueBtn" data-i18n="continue">Continue</button>
-      </div>
-      <button class="icon-btn" id="closeMarket" aria-label="Close">✕</button>
-    </div>
-  </section>
-
-  <section class="announce" id="announceBar">
-    <div class="container top-row">
-      <p data-i18n="announcement"></p>
-      <button class="icon-btn" id="closeAnnounce" aria-label="Close">✕</button>
-    </div>
-  </section>
-
-  <div class="nav-wrap">
-    <div class="container nav">
-      <a class="logo" href="#home" aria-label="Velmora"><img src="images/logo.png" alt="Velmora logo" /></a>
-      <nav class="center-nav" aria-label="Main">
-        <a href="#products" data-i18n="navKitchen"></a>
-        <a href="#products" data-i18n="navCoffee"></a>
-        <a href="#oem" data-i18n="navLiving"></a>
-        <a href="#oem" data-i18n="navOem"></a>
-        <a href="#contact" data-i18n="navSupport"></a>
-      </nav>
-      <nav class="right-nav" aria-label="Utility">
-        <a href="#hero" data-i18n="utilDiscover"></a>
-        <a href="#contact" data-i18n="utilSupport"></a>
-        <a href="#contact" data-i18n="utilContact"></a>
-        <a href="#" class="search" aria-label="Search">⌕</a>
-        <a href="#contact" class="btn btn-primary" data-i18n="getQuote"></a>
-      </nav>
-    </div>
-  </div>
-
-  <section class="collection">
-    <div class="container collection-row">
-      <div class="collection-left"><strong data-i18n="collectionTitle"></strong><span data-i18n="collectionYear"></span></div>
-      <div class="collection-links">
-        <a href="#hero" data-i18n="overview"></a>
-        <a href="#products" data-i18n="products"></a>
-        <a href="#oem" data-i18n="oem"></a>
-        <a href="#contact" data-i18n="contact"></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="hero" id="hero">
-    <div class="container hero-grid">
-      <div>
-        <h1 data-i18n="heroTitle"></h1>
-        <p data-i18n="heroSubtitle"></p>
-        <div class="hero-actions">
-          <a href="#products" class="btn btn-primary" data-i18n="viewProducts"></a>
-          <a href="#contact" class="btn btn-light" data-i18n="contactUs"></a>
-        </div>
-      </div>
-      <img src="images/hero-banner.jpg" alt="Velmora smart kitchen collection" />
-    </div>
-  </section>
-
-  <section class="section" id="products">
-    <div class="container">
-      <h2 data-i18n="productTitle"></h2>
-      <div class="cards" id="productGrid"></div>
-    </div>
-  </section>
-
-  <section class="section" id="oem">
-    <div class="container oem">
-      <h2 data-i18n="oemTitle"></h2>
-      <p data-i18n="oemDesc"></p>
-    </div>
-  </section>
-
-  <section class="section" id="contact">
-    <div class="container contact">
-      <h2 data-i18n="contactTitle"></h2>
-      <p data-i18n="contactDesc"></p>
-      <p>Email: <a href="mailto:sales@velmora-tech.com">sales@velmora-tech.com</a></p>
-      <p>WhatsApp: <a href="https://wa.me/8615810201140" target="_blank" rel="noopener">+86 15810201140</a></p>
-    </div>
-  </section>
-
-  <footer>© <span id="year"></span> Velmora · <span data-i18n="slogan"></span></footer>
-
-  <script>
-    const i18n = {
-      en:{marketTitle:"Choose your market and language",continue:"Continue",announcement:"New Velmora Smart Kitchen Collection is now available for global OEM/ODM partners",navKitchen:"Kitchen Appliances",navCoffee:"Coffee Appliances",navLiving:"Smart Living",navOem:"OEM/ODM",navSupport:"Support",utilDiscover:"Discover",utilSupport:"Support",utilContact:"Contact",getQuote:"Get Quote",collectionTitle:"Velmora Smart Kitchen Collection",collectionYear:"2026 Product Line",overview:"Overview",products:"Products",oem:"OEM/ODM",contact:"Contact",heroTitle:"Velmora Smart Kitchen Collection",heroSubtitle:"Designed for modern kitchens. Built for global OEM/ODM partners.",viewProducts:"View Products",contactUs:"Contact Us",productTitle:"Featured Products",oemTitle:"OEM/ODM Partnership",oemDesc:"Flexible manufacturing, custom design support, and reliable lead times for global partners.",contactTitle:"Contact Velmora",contactDesc:"Talk to our team for product development and sourcing opportunities.",slogan:"Smart Living Starts Here",learnMore:"Learn More",sendInquiry:"Send Inquiry",productsData:[{name:"Milk Frother",point:"Fine foam in seconds for café-style drinks.",img:"images/milk-frother.png"},{name:"Air Fryer",point:"Crispy cooking with less oil and precise control.",img:"images/air-fryer.png"},{name:"Personal Blender",point:"High-speed blending in a compact footprint.",img:"images/personal-blender.png"},{name:"Coffee Maker",point:"Consistent extraction and easy daily use.",img:"images/coffee-maker.png"}]},
-      es:{marketTitle:"Elige tu mercado e idioma",continue:"Continuar",announcement:"La nueva colección Velmora Smart Kitchen ya está disponible para socios OEM/ODM globales",navKitchen:"Electrodomésticos de cocina",navCoffee:"Electrodomésticos de café",navLiving:"Vida inteligente",navOem:"OEM/ODM",navSupport:"Soporte",utilDiscover:"Descubrir",utilSupport:"Soporte",utilContact:"Contacto",getQuote:"Solicitar cotización",collectionTitle:"Colección Velmora Smart Kitchen",collectionYear:"Línea de productos 2026",overview:"Resumen",products:"Productos",oem:"OEM/ODM",contact:"Contacto",heroTitle:"Colección Velmora Smart Kitchen",heroSubtitle:"Diseñada para cocinas modernas. Creada para socios OEM/ODM globales.",viewProducts:"Ver productos",contactUs:"Contáctanos",productTitle:"Productos destacados",oemTitle:"Asociación OEM/ODM",oemDesc:"Fabricación flexible, soporte de diseño personalizado y plazos confiables para socios globales.",contactTitle:"Contactar a Velmora",contactDesc:"Habla con nuestro equipo para desarrollo de productos y oportunidades de suministro.",slogan:"Smart Living Starts Here",learnMore:"Más información",sendInquiry:"Enviar consulta",productsData:[{name:"Milk Frother",point:"Espuma fina en segundos para bebidas tipo café.",img:"images/milk-frother.png"},{name:"Air Fryer",point:"Cocción crujiente con menos aceite y control preciso.",img:"images/air-fryer.png"},{name:"Personal Blender",point:"Mezcla de alta velocidad en formato compacto.",img:"images/personal-blender.png"},{name:"Coffee Maker",point:"Extracción constante y uso diario sencillo.",img:"images/coffee-maker.png"}]},
-      fr:{marketTitle:"Choisissez votre marché et votre langue",continue:"Continuer",announcement:"La nouvelle collection Velmora Smart Kitchen est désormais disponible pour les partenaires OEM/ODM mondiaux",navKitchen:"Appareils de cuisine",navCoffee:"Appareils à café",navLiving:"Vie intelligente",navOem:"OEM/ODM",navSupport:"Support",utilDiscover:"Découvrir",utilSupport:"Support",utilContact:"Contact",getQuote:"Demander un devis",collectionTitle:"Collection Velmora Smart Kitchen",collectionYear:"Gamme de produits 2026",overview:"Aperçu",products:"Produits",oem:"OEM/ODM",contact:"Contact",heroTitle:"Collection Velmora Smart Kitchen",heroSubtitle:"Conçue pour les cuisines modernes. Pensée pour les partenaires OEM/ODM mondiaux.",viewProducts:"Voir les produits",contactUs:"Nous contacter",productTitle:"Produits phares",oemTitle:"Partenariat OEM/ODM",oemDesc:"Fabrication flexible, support de conception personnalisée et délais fiables pour les partenaires mondiaux.",contactTitle:"Contacter Velmora",contactDesc:"Parlez à notre équipe pour le développement produit et l'approvisionnement.",slogan:"Smart Living Starts Here",learnMore:"En savoir plus",sendInquiry:"Envoyer une demande",productsData:[{name:"Milk Frother",point:"Mousse fine en quelques secondes pour boissons café.",img:"images/milk-frother.png"},{name:"Air Fryer",point:"Cuisson croustillante avec moins d'huile et contrôle précis.",img:"images/air-fryer.png"},{name:"Personal Blender",point:"Mixage haute vitesse dans un format compact.",img:"images/personal-blender.png"},{name:"Coffee Maker",point:"Extraction régulière et utilisation quotidienne simple.",img:"images/coffee-maker.png"}]},
-      de:{marketTitle:"Wählen Sie Markt und Sprache",continue:"Weiter",announcement:"Die neue Velmora Smart Kitchen Collection ist jetzt für globale OEM/ODM-Partner verfügbar",navKitchen:"Küchengeräte",navCoffee:"Kaffeegeräte",navLiving:"Smart Living",navOem:"OEM/ODM",navSupport:"Support",utilDiscover:"Entdecken",utilSupport:"Support",utilContact:"Kontakt",getQuote:"Angebot anfordern",collectionTitle:"Velmora Smart Kitchen Collection",collectionYear:"Produktlinie 2026",overview:"Überblick",products:"Produkte",oem:"OEM/ODM",contact:"Kontakt",heroTitle:"Velmora Smart Kitchen Collection",heroSubtitle:"Für moderne Küchen entwickelt. Für globale OEM/ODM-Partner gebaut.",viewProducts:"Produkte ansehen",contactUs:"Kontakt",productTitle:"Ausgewählte Produkte",oemTitle:"OEM/ODM-Partnerschaft",oemDesc:"Flexible Fertigung, kundenspezifische Designunterstützung und zuverlässige Lieferzeiten.",contactTitle:"Velmora kontaktieren",contactDesc:"Sprechen Sie mit unserem Team über Produktentwicklung und Beschaffung.",slogan:"Smart Living Starts Here",learnMore:"Mehr erfahren",sendInquiry:"Anfrage senden",productsData:[{name:"Milk Frother",point:"Feiner Milchschaum in Sekunden für Café-Getränke.",img:"images/milk-frother.png"},{name:"Air Fryer",point:"Knuspriges Garen mit weniger Öl und präziser Steuerung.",img:"images/air-fryer.png"},{name:"Personal Blender",point:"Hochgeschwindigkeitsmixen im kompakten Format.",img:"images/personal-blender.png"},{name:"Coffee Maker",point:"Konstante Extraktion und einfache tägliche Nutzung.",img:"images/coffee-maker.png"}]},
-      it:{marketTitle:"Scegli mercato e lingua",continue:"Continua",announcement:"La nuova Velmora Smart Kitchen Collection è ora disponibile per partner OEM/ODM globali",navKitchen:"Elettrodomestici da cucina",navCoffee:"Elettrodomestici da caffè",navLiving:"Vita smart",navOem:"OEM/ODM",navSupport:"Supporto",utilDiscover:"Scopri",utilSupport:"Supporto",utilContact:"Contatto",getQuote:"Richiedi preventivo",collectionTitle:"Velmora Smart Kitchen Collection",collectionYear:"Linea prodotti 2026",overview:"Panoramica",products:"Prodotti",oem:"OEM/ODM",contact:"Contatto",heroTitle:"Velmora Smart Kitchen Collection",heroSubtitle:"Progettata per cucine moderne. Costruita per partner OEM/ODM globali.",viewProducts:"Vedi prodotti",contactUs:"Contattaci",productTitle:"Prodotti in evidenza",oemTitle:"Partnership OEM/ODM",oemDesc:"Produzione flessibile, supporto di design personalizzato e tempi affidabili.",contactTitle:"Contatta Velmora",contactDesc:"Parla con il nostro team per sviluppo prodotto e opportunità di fornitura.",slogan:"Smart Living Starts Here",learnMore:"Scopri di più",sendInquiry:"Invia richiesta",productsData:[{name:"Milk Frother",point:"Schiuma fine in pochi secondi per bevande da caffetteria.",img:"images/milk-frother.png"},{name:"Air Fryer",point:"Cottura croccante con meno olio e controllo preciso.",img:"images/air-fryer.png"},{name:"Personal Blender",point:"Frullatura ad alta velocità in formato compatto.",img:"images/personal-blender.png"},{name:"Coffee Maker",point:"Estrazione costante e uso quotidiano semplice.",img:"images/coffee-maker.png"}]},
-      zh:{marketTitle:"选择您的市场和语言",continue:"继续",announcement:"Velmora Smart Kitchen Collection 全新系列现已面向全球 OEM/ODM 合作伙伴发布",navKitchen:"厨房电器",navCoffee:"咖啡电器",navLiving:"智慧生活",navOem:"OEM/ODM",navSupport:"支持",utilDiscover:"发现",utilSupport:"支持",utilContact:"联系",getQuote:"获取报价",collectionTitle:"Velmora Smart Kitchen Collection",collectionYear:"2026 产品线",overview:"概览",products:"产品",oem:"OEM/ODM",contact:"联系",heroTitle:"Velmora Smart Kitchen Collection",heroSubtitle:"为现代厨房而设计。为全球 OEM/ODM 合作伙伴而打造。",viewProducts:"查看产品",contactUs:"联系我们",productTitle:"精选产品",oemTitle:"OEM/ODM 合作",oemDesc:"提供灵活制造、定制设计支持与可靠交付周期。",contactTitle:"联系 Velmora",contactDesc:"欢迎联系团队，洽谈产品开发与采购合作。",slogan:"Smart Living Starts Here",learnMore:"了解更多",sendInquiry:"发送询盘",productsData:[{name:"Milk Frother",point:"数秒绵密打泡，轻松制作咖啡馆风味。",img:"images/milk-frother.png"},{name:"Air Fryer",point:"少油酥脆烹饪，精准控温更便捷。",img:"images/air-fryer.png"},{name:"Personal Blender",point:"高速搅拌，机身紧凑节省空间。",img:"images/personal-blender.png"},{name:"Coffee Maker",point:"稳定萃取，日常使用更省心。",img:"images/coffee-maker.png"}]}
-    };
-
-    function applyLang(lang){
-      const t=i18n[lang]||i18n.en;
-      document.documentElement.lang=lang==='zh'?'zh-CN':lang;
-      document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=t[el.dataset.i18n]||'');
-      document.getElementById('productGrid').innerHTML=t.productsData.map(p=>`<article class="card"><img src="${p.img}" alt="${p.name}"><div class="card-body"><h3>${p.name}</h3><p>${p.point}</p><div class="card-actions"><a href="#products" class="btn btn-light">${t.learnMore}</a><a href="#contact" class="btn btn-primary">${t.sendInquiry}</a></div></div></article>`).join('');
-    }
-
-    const langSelect=document.getElementById('langSelect');
-    document.getElementById('continueBtn').addEventListener('click',()=>applyLang(langSelect.value));
-    langSelect.addEventListener('change',e=>applyLang(e.target.value));
-    document.getElementById('closeMarket').addEventListener('click',()=>document.getElementById('marketBar').classList.add('hidden'));
-    document.getElementById('closeAnnounce').addEventListener('click',()=>document.getElementById('announceBar').classList.add('hidden'));
-    document.getElementById('year').textContent=new Date().getFullYear();
-    applyLang('en');
-  </script>
+<section class="market" id="marketBar"><div class="container row"><div class="market-left"><span class="market-text" data-i18n="marketText"></span><select id="langSelect" aria-label="market and language"><option value="en">Global / English</option><option value="es">España / Español</option><option value="fr">France / Français</option><option value="de">Deutschland / Deutsch</option><option value="it">Italia / Italiano</option><option value="zh">中国 / 中文</option></select><button class="btn btn-primary" id="continueBtn" data-i18n="continue"></button></div><button class="close" id="closeMarket" aria-label="close">✕</button></div></section>
+<section class="announce" id="announceBar"><div class="container row"><p data-i18n="announcement"></p><button class="close" id="closeAnnounce" aria-label="close">✕</button></div></section>
+<header class="nav-wrap"><div class="container nav"><a class="logo" href="#hero" aria-label="Velmora"><img class="img-fallback" src="images/logo.png" alt="Velmora logo" onerror="this.style.display='none';this.parentElement.innerHTML='Velmora';"></a><nav class="center" aria-label="Main"><a href="#products" data-i18n="navKitchen"></a><a href="#products" data-i18n="navCoffee"></a><a href="#oem" data-i18n="navLiving"></a><a href="#oem" data-i18n="navOem"></a><a href="#contact" data-i18n="navSupport"></a></nav><nav class="right" aria-label="Utility"><a href="#hero" data-i18n="utilDiscover"></a><a href="#contact" data-i18n="utilSupport"></a><a href="#contact" data-i18n="utilContact"></a><a href="#" class="search" aria-label="search">⌕</a><a href="#contact" class="btn btn-primary" data-i18n="getQuote"></a></nav></div></header>
+<section class="subnav"><div class="container subrow"><div class="subleft"><strong data-i18n="collectionTitle"></strong><span data-i18n="collectionYear"></span></div><div class="sublinks"><a href="#hero" data-i18n="overview"></a><a href="#products" data-i18n="products"></a><a href="#oem" data-i18n="oem"></a><a href="#contact" data-i18n="contact"></a></div></div></section>
+<section class="hero" id="hero"><div class="container hero-grid"><div><h1 data-i18n="heroTitle"></h1><p data-i18n="heroSubtitle"></p><div class="actions"><a href="#products" class="btn btn-primary" data-i18n="viewProducts"></a><a href="#contact" class="btn btn-light" data-i18n="contactUs"></a></div></div><img class="img-fallback hero-img" src="images/hero-banner.jpg" alt="Velmora smart kitchen collection" onerror="this.alt='Velmora collection banner';"></div></section>
+<section class="section" id="products"><div class="container"><h2 data-i18n="productTitle"></h2><div class="cards" id="productGrid"></div></div></section>
+<section class="section" id="oem"><div class="container panel"><h2 data-i18n="oemTitle"></h2><p data-i18n="oemDesc"></p></div></section>
+<section class="section" id="contact"><div class="container panel"><h2 data-i18n="contactTitle"></h2><p data-i18n="contactDesc"></p><p>Email: <a href="mailto:sales@velmora-tech.com">sales@velmora-tech.com</a></p><p>WhatsApp: <a href="https://wa.me/8615810201140" target="_blank" rel="noopener">+86 15810201140</a></p></div></section>
+<footer>© <span id="year"></span> Velmora · <span data-i18n="slogan"></span></footer>
+<script>
+const i18n={
+en:{marketText:"Choose your market and language",continue:"Continue",announcement:"New Velmora Smart Kitchen Collection is now available for global OEM/ODM partners.",navKitchen:"Kitchen Appliances",navCoffee:"Coffee Appliances",navLiving:"Smart Living",navOem:"OEM/ODM",navSupport:"Support",utilDiscover:"Discover",utilSupport:"Support",utilContact:"Contact",getQuote:"Get Quote",collectionTitle:"Velmora Smart Kitchen Collection",collectionYear:"2026 Product Line",overview:"Overview",products:"Products",oem:"OEM/ODM",contact:"Contact",heroTitle:"Velmora Smart Kitchen Collection",heroSubtitle:"Designed for modern kitchens. Built for global OEM/ODM partners.",viewProducts:"View Products",contactUs:"Contact Us",productTitle:"Featured Products",oemTitle:"OEM/ODM Advantages",oemDesc:"Flexible manufacturing, custom design support, and reliable lead times for global partners.",contactTitle:"Contact Velmora",contactDesc:"Talk with our team for product development and sourcing opportunities.",slogan:"Smart Living Starts Here",learnMore:"Learn More",sendInquiry:"Send Inquiry",productsData:[{name:"Milk Frother",point:"Fine foam in seconds for café-style drinks.",img:"images/milk-frother.png"},{name:"Air Fryer",point:"Crispy cooking with less oil and precise control.",img:"images/air-fryer.png"},{name:"Personal Blender",point:"High-speed blending in a compact footprint.",img:"images/personal-blender.png"},{name:"Coffee Maker",point:"Consistent extraction and easy daily use.",img:"images/coffee-maker.png"}]},
+es:{marketText:"Elige tu mercado e idioma",continue:"Continuar",announcement:"La nueva colección Velmora Smart Kitchen ya está disponible para socios OEM/ODM globales.",navKitchen:"Electrodomésticos de cocina",navCoffee:"Electrodomésticos de café",navLiving:"Vida inteligente",navOem:"OEM/ODM",navSupport:"Soporte",utilDiscover:"Descubrir",utilSupport:"Soporte",utilContact:"Contacto",getQuote:"Solicitar cotización",collectionTitle:"Colección Velmora Smart Kitchen",collectionYear:"Línea de productos 2026",overview:"Resumen",products:"Productos",oem:"OEM/ODM",contact:"Contacto",heroTitle:"Colección Velmora Smart Kitchen",heroSubtitle:"Diseñada para cocinas modernas. Creada para socios OEM/ODM globales.",viewProducts:"Ver productos",contactUs:"Contáctanos",productTitle:"Productos destacados",oemTitle:"Ventajas OEM/ODM",oemDesc:"Fabricación flexible, soporte de diseño personalizado y plazos confiables.",contactTitle:"Contactar a Velmora",contactDesc:"Habla con nuestro equipo para desarrollo de productos y abastecimiento.",slogan:"Smart Living Starts Here",learnMore:"Más información",sendInquiry:"Enviar consulta",productsData:[{name:"Milk Frother",point:"Espuma fina en segundos para bebidas tipo café.",img:"images/milk-frother.png"},{name:"Air Fryer",point:"Cocción crujiente con menos aceite y control preciso.",img:"images/air-fryer.png"},{name:"Personal Blender",point:"Mezcla de alta velocidad en formato compacto.",img:"images/personal-blender.png"},{name:"Coffee Maker",point:"Extracción constante y uso diario sencillo.",img:"images/coffee-maker.png"}]},
+fr:{marketText:"Choisissez votre marché et votre langue",continue:"Continuer",announcement:"La nouvelle collection Velmora Smart Kitchen est désormais disponible pour les partenaires OEM/ODM mondiaux.",navKitchen:"Appareils de cuisine",navCoffee:"Appareils à café",navLiving:"Vie intelligente",navOem:"OEM/ODM",navSupport:"Support",utilDiscover:"Découvrir",utilSupport:"Support",utilContact:"Contact",getQuote:"Demander un devis",collectionTitle:"Collection Velmora Smart Kitchen",collectionYear:"Gamme de produits 2026",overview:"Aperçu",products:"Produits",oem:"OEM/ODM",contact:"Contact",heroTitle:"Collection Velmora Smart Kitchen",heroSubtitle:"Conçue pour les cuisines modernes. Pensée pour les partenaires OEM/ODM mondiaux.",viewProducts:"Voir les produits",contactUs:"Nous contacter",productTitle:"Produits phares",oemTitle:"Avantages OEM/ODM",oemDesc:"Fabrication flexible, support de conception personnalisée et délais fiables.",contactTitle:"Contacter Velmora",contactDesc:"Échangez avec notre équipe pour le développement produit et l'approvisionnement.",slogan:"Smart Living Starts Here",learnMore:"En savoir plus",sendInquiry:"Envoyer une demande",productsData:[{name:"Milk Frother",point:"Mousse fine en quelques secondes pour boissons café.",img:"images/milk-frother.png"},{name:"Air Fryer",point:"Cuisson croustillante avec moins d'huile et contrôle précis.",img:"images/air-fryer.png"},{name:"Personal Blender",point:"Mixage haute vitesse dans un format compact.",img:"images/personal-blender.png"},{name:"Coffee Maker",point:"Extraction régulière et utilisation quotidienne simple.",img:"images/coffee-maker.png"}]},
+de:{marketText:"Wählen Sie Markt und Sprache",continue:"Weiter",announcement:"Die neue Velmora Smart Kitchen Collection ist jetzt für globale OEM/ODM-Partner verfügbar.",navKitchen:"Küchengeräte",navCoffee:"Kaffeegeräte",navLiving:"Smart Living",navOem:"OEM/ODM",navSupport:"Support",utilDiscover:"Entdecken",utilSupport:"Support",utilContact:"Kontakt",getQuote:"Angebot anfordern",collectionTitle:"Velmora Smart Kitchen Collection",collectionYear:"Produktlinie 2026",overview:"Überblick",products:"Produkte",oem:"OEM/ODM",contact:"Kontakt",heroTitle:"Velmora Smart Kitchen Collection",heroSubtitle:"Für moderne Küchen entwickelt. Für globale OEM/ODM-Partner gebaut.",viewProducts:"Produkte ansehen",contactUs:"Kontakt",productTitle:"Ausgewählte Produkte",oemTitle:"OEM/ODM-Vorteile",oemDesc:"Flexible Fertigung, kundenspezifische Designunterstützung und zuverlässige Lieferzeiten.",contactTitle:"Velmora kontaktieren",contactDesc:"Sprechen Sie mit unserem Team über Produktentwicklung und Beschaffung.",slogan:"Smart Living Starts Here",learnMore:"Mehr erfahren",sendInquiry:"Anfrage senden",productsData:[{name:"Milk Frother",point:"Feiner Milchschaum in Sekunden für Café-Getränke.",img:"images/milk-frother.png"},{name:"Air Fryer",point:"Knuspriges Garen mit weniger Öl und präziser Steuerung.",img:"images/air-fryer.png"},{name:"Personal Blender",point:"Hochgeschwindigkeitsmixen im kompakten Format.",img:"images/personal-blender.png"},{name:"Coffee Maker",point:"Konstante Extraktion und einfache tägliche Nutzung.",img:"images/coffee-maker.png"}]},
+it:{marketText:"Scegli mercato e lingua",continue:"Continua",announcement:"La nuova Velmora Smart Kitchen Collection è ora disponibile per partner OEM/ODM globali.",navKitchen:"Elettrodomestici da cucina",navCoffee:"Elettrodomestici da caffè",navLiving:"Vita smart",navOem:"OEM/ODM",navSupport:"Supporto",utilDiscover:"Scopri",utilSupport:"Supporto",utilContact:"Contatto",getQuote:"Richiedi preventivo",collectionTitle:"Velmora Smart Kitchen Collection",collectionYear:"Linea prodotti 2026",overview:"Panoramica",products:"Prodotti",oem:"OEM/ODM",contact:"Contatto",heroTitle:"Velmora Smart Kitchen Collection",heroSubtitle:"Progettata per cucine moderne. Costruita per partner OEM/ODM globali.",viewProducts:"Vedi prodotti",contactUs:"Contattaci",productTitle:"Prodotti in evidenza",oemTitle:"Vantaggi OEM/ODM",oemDesc:"Produzione flessibile, supporto di design personalizzato e tempi affidabili.",contactTitle:"Contatta Velmora",contactDesc:"Parla con il nostro team per sviluppo prodotto e opportunità di fornitura.",slogan:"Smart Living Starts Here",learnMore:"Scopri di più",sendInquiry:"Invia richiesta",productsData:[{name:"Milk Frother",point:"Schiuma fine in pochi secondi per bevande da caffetteria.",img:"images/milk-frother.png"},{name:"Air Fryer",point:"Cottura croccante con meno olio e controllo preciso.",img:"images/air-fryer.png"},{name:"Personal Blender",point:"Frullatura ad alta velocità in formato compatto.",img:"images/personal-blender.png"},{name:"Coffee Maker",point:"Estrazione costante e uso quotidiano semplice.",img:"images/coffee-maker.png"}]},
+zh:{marketText:"选择您的市场和语言",continue:"继续",announcement:"Velmora Smart Kitchen Collection 全新系列现已面向全球 OEM/ODM 合作伙伴发布。",navKitchen:"厨房电器",navCoffee:"咖啡电器",navLiving:"智慧生活",navOem:"OEM/ODM",navSupport:"支持",utilDiscover:"发现",utilSupport:"支持",utilContact:"联系",getQuote:"获取报价",collectionTitle:"Velmora Smart Kitchen Collection",collectionYear:"2026 产品线",overview:"概览",products:"产品",oem:"OEM/ODM",contact:"联系",heroTitle:"Velmora Smart Kitchen Collection",heroSubtitle:"为现代厨房而设计。为全球 OEM/ODM 合作伙伴而打造。",viewProducts:"查看产品",contactUs:"联系我们",productTitle:"精选产品",oemTitle:"OEM/ODM 优势",oemDesc:"提供灵活制造、定制设计支持与可靠交付周期。",contactTitle:"联系 Velmora",contactDesc:"欢迎联系团队，洽谈产品开发与采购合作。",slogan:"Smart Living Starts Here",learnMore:"了解更多",sendInquiry:"发送询盘",productsData:[{name:"Milk Frother",point:"数秒绵密打泡，轻松制作咖啡馆风味。",img:"images/milk-frother.png"},{name:"Air Fryer",point:"少油酥脆烹饪，精准控温更便捷。",img:"images/air-fryer.png"},{name:"Personal Blender",point:"高速搅拌，机身紧凑节省空间。",img:"images/personal-blender.png"},{name:"Coffee Maker",point:"稳定萃取，日常使用更省心。",img:"images/coffee-maker.png"}]}
+};
+function applyLang(lang){const t=i18n[lang]||i18n.en;document.documentElement.lang=lang==='zh'?'zh-CN':lang;document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=t[el.dataset.i18n]||'');document.getElementById('productGrid').innerHTML=t.productsData.map(p=>`<article class="card"><img class="img-fallback" src="${p.img}" alt="${p.name}" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('afterbegin','<div class=\'img-fallback\' style=\'height:220px;display:grid;place-items:center;color:#6b7280\'>Image unavailable</div>')"><div class="card-body"><h3>${p.name}</h3><p>${p.point}</p><div class="card-actions"><a href="#products" class="btn btn-light">${t.learnMore}</a><a href="#contact" class="btn btn-primary">${t.sendInquiry}</a></div></div></article>`).join('');}
+const sel=document.getElementById('langSelect');document.getElementById('continueBtn').addEventListener('click',()=>applyLang(sel.value));sel.addEventListener('change',e=>applyLang(e.target.value));document.getElementById('closeMarket').addEventListener('click',()=>document.getElementById('marketBar').classList.add('hidden'));document.getElementById('closeAnnounce').addEventListener('click',()=>document.getElementById('announceBar').classList.add('hidden'));document.getElementById('year').textContent=new Date().getFullYear();applyLang('en');
+</script>
 </body>
 </html>
