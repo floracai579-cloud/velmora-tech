@@ -63,6 +63,27 @@
             white-space: nowrap;
         }
 
+        .lang-switch {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-right: 18px;
+            padding-right: 18px;
+            border-right: 1px solid rgba(255,255,255,.18);
+        }
+
+        .lang-switch a {
+            color: rgba(255,255,255,.78);
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: .2px;
+        }
+
+        .lang-switch a.active-lang {
+            color: #fff;
+            font-weight: 600;
+        }
+
         nav a {
             color: rgba(255,255,255,.86);
             text-decoration: none;
@@ -166,6 +187,7 @@
             .hero-grid { grid-template-columns: 1fr; }
             .stats { grid-template-columns: 1fr; }
             nav { display: none; }
+            .header-title { font-size: 18px; }
         }
     </style>
 </head>
@@ -174,6 +196,14 @@
     <img src="logo.png" alt="Velmora Logo" class="header-logo">
     <div class="header-title">Velmora Tech</div>
     <nav>
+        <span class="lang-switch" aria-label="语言设置">
+            <a href="#" class="active-lang" lang="en">English</a>
+            <a href="#" lang="zh-CN">中文</a>
+            <a href="#" lang="es">Español</a>
+            <a href="#" lang="fr">Français</a>
+            <a href="#" lang="de">Deutsch</a>
+            <a href="#" lang="it">Italiano</a>
+        </span>
         <a href="#about">关于我们</a>
         <a href="#products">产品</a>
         <a href="#contact">联系</a>
