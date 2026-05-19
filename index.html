@@ -3,6 +3,8 @@ codex/clean-up-and-optimize-velmora-website
 <html lang="en">
 codex/clean-up-and-optimize-velmora-website
 
+codex/clean-up-and-optimize-velmora-website
+
 
 codex/clean-up-and-optimize-velmora-website-is96th
 codex/clean-up-and-optimize-velmora-website-is96th
@@ -60,10 +62,158 @@ main
  main
  main
 main
+main
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Velmora | Smart Living Starts Here</title>
+codex/clean-up-and-optimize-velmora-website
+  <link rel="icon" href="images/logo.png" />
+  <style>
+    :root { --accent:#ff6900; --text:#111827; --muted:#6b7280; --line:#e5e7eb; --bg:#ffffff; --soft:#f8fafc; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Inter,Segoe UI,Arial,sans-serif; color:var(--text); background:var(--bg); }
+    a { color:inherit; text-decoration:none; }
+    .container { max-width:1200px; margin:0 auto; padding:0 24px; }
+
+    header { border-bottom:1px solid var(--line); background:#fff; }
+    .nav { min-height:72px; display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
+    .logo img { height:30px; width:auto; display:block; object-fit:contain; }
+    .links { display:flex; align-items:center; gap:16px; flex:1; flex-wrap:wrap; }
+    .links a { font-size:14px; color:#1f2937; }
+    .actions { display:flex; align-items:center; gap:10px; }
+    .search-btn { width:36px; height:36px; border:1px solid var(--line); border-radius:10px; background:#fff; font-size:18px; cursor:pointer; }
+    .btn { height:40px; padding:0 18px; border-radius:999px; border:1px solid transparent; font-weight:600; display:inline-flex; align-items:center; }
+    .btn-primary { background:var(--accent); color:#fff; }
+    .btn-light { background:#fff; border-color:var(--line); }
+
+    .hero { background:linear-gradient(120deg,#f8fafc,#eef2f7); padding:56px 0; border-bottom:1px solid var(--line); }
+    .hero h1 { margin:0 0 10px; font-size:48px; }
+    .hero h2 { margin:0 0 14px; color:#111; font-size:26px; }
+    .hero p { margin:0 0 22px; color:var(--muted); max-width:680px; }
+    .hero-actions { display:flex; gap:10px; flex-wrap:wrap; }
+
+    section { padding:52px 0; }
+    h3.section-title { margin:0 0 18px; font-size:30px; }
+    .products { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px; }
+    .card { border:1px solid var(--line); border-radius:14px; overflow:hidden; background:#fff; }
+    .card img { width:100%; height:220px; object-fit:cover; background:var(--soft); display:block; }
+    .card-body { padding:14px; }
+    .card h4 { margin:0 0 8px; font-size:20px; }
+    .card p { margin:0 0 12px; color:var(--muted); min-height:40px; }
+
+    .oem-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; }
+    .oem-item { border:1px solid var(--line); background:var(--soft); border-radius:12px; padding:16px; font-weight:600; }
+
+    .contact { border:1px solid var(--line); border-radius:14px; padding:20px; }
+    .contact p { margin:8px 0; }
+
+    footer { border-top:1px solid var(--line); color:#6b7280; padding:24px 0 34px; }
+
+    .overlay { position:fixed; inset:0; background:rgba(17,24,39,.5); display:none; align-items:flex-start; justify-content:center; padding:8vh 16px; }
+    .overlay.open { display:flex; }
+    .panel { width:min(760px,100%); background:#fff; border-radius:14px; padding:16px; box-shadow:0 20px 40px rgba(0,0,0,.2); }
+    .panel input { width:100%; height:46px; border:1px solid var(--line); border-radius:10px; padding:0 12px; font-size:16px; }
+
+    @media (max-width:860px){ .container{padding:0 16px;} .hero h1{font-size:38px;} .hero h2{font-size:22px;} }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="#top"><img src="images/logo.png" alt="Velmora logo" /></a>
+      <nav class="links">
+        <a href="#products">Kitchen Appliances</a>
+        <a href="#products">Coffee Appliances</a>
+        <a href="#oem">Smart Living</a>
+        <a href="#oem">OEM/ODM</a>
+        <a href="#oem">Support</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="actions">
+        <button id="openSearch" class="search-btn" aria-label="Search">⌕</button>
+        <a href="#contact" class="btn btn-primary">Get Quote</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="container">
+      <h1>Velmora</h1>
+      <h2>Smart Living Starts Here</h2>
+      <p>Smart kitchen appliances designed for global OEM/ODM partners.</p>
+      <div class="hero-actions">
+        <a href="#products" class="btn btn-primary">View Products</a>
+        <a href="#contact" class="btn btn-light">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="products">
+    <div class="container">
+      <h3 class="section-title">Products</h3>
+      <div class="products">
+        <article class="card">
+          <img src="images/milk-frother.png" alt="Milk Frother" />
+          <div class="card-body"><h4>Milk Frother</h4><p>Rich, silky foam in seconds for café-style beverages.</p><a class="btn btn-primary" href="#contact">Send Inquiry</a></div>
+        </article>
+        <article class="card">
+          <img src="images/air-fryer.png" alt="Air Fryer" />
+          <div class="card-body"><h4>Air Fryer</h4><p>Crispy cooking with less oil and precise temperature control.</p><a class="btn btn-primary" href="#contact">Send Inquiry</a></div>
+        </article>
+        <article class="card">
+          <img src="images/personal-blender.png" alt="Personal Blender" />
+          <div class="card-body"><h4>Personal Blender</h4><p>Compact, high-speed blending for daily nutrition.</p><a class="btn btn-primary" href="#contact">Send Inquiry</a></div>
+        </article>
+        <article class="card">
+          <img src="images/coffee-maker.png" alt="Coffee Maker" />
+          <div class="card-body"><h4>Coffee Maker</h4><p>Reliable extraction and easy operation for consistent flavor.</p><a class="btn btn-primary" href="#contact">Send Inquiry</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="oem">
+    <div class="container">
+      <h3 class="section-title">OEM/ODM</h3>
+      <div class="oem-grid">
+        <div class="oem-item">OEM/ODM Support</div>
+        <div class="oem-item">Export-ready Quality</div>
+        <div class="oem-item">Flexible Customization</div>
+        <div class="oem-item">Fast Response</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h3 class="section-title">Contact</h3>
+      <div class="contact">
+        <p>Email: <a href="mailto:sales@velmora-tech.com">sales@velmora-tech.com</a></p>
+        <p>WhatsApp: <a href="https://wa.me/8615810201140" target="_blank" rel="noopener">+86 15810201140</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">© 2026 Velmora. All rights reserved.</div>
+  </footer>
+
+  <div class="overlay" id="searchOverlay">
+    <div class="panel">
+      <input id="searchInput" placeholder="Search products: Milk Frother, Air Fryer, Personal Blender, Coffee Maker, OEM/ODM, Contact" />
+    </div>
+  </div>
+
+  <script>
+    const overlay = document.getElementById('searchOverlay');
+    const openBtn = document.getElementById('openSearch');
+    const input = document.getElementById('searchInput');
+    openBtn.addEventListener('click', () => { overlay.classList.add('open'); input.focus(); });
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.classList.remove('open'); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') overlay.classList.remove('open'); });
+  </script>
+
 codex/clean-up-and-optimize-velmora-website
 
 codex/clean-up-and-optimize-velmora-website
@@ -394,6 +544,7 @@ main
  main
 codex/clean-up-and-optimize-velmora-website-ea3p44
 
+main
 main
 main
 main
