@@ -1,386 +1,107 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Velmora | 智能厨房小家电制造商</title>
-    <meta name="description" content="Velmora Tech 专注奶泡机、空气炸锅、搅拌机与电动咖啡研磨机，提供 OEM/ODM 全球合作。">
-    <meta name="keywords" content="奶泡机,空气炸锅,搅拌机,电动咖啡研磨机,OEM,ODM">
-    <link rel="icon" href="images/logo.png">
-
-    <style>
-        :root {
-codex/optimize-website-with-new-products-72s461
-
-            --bg: #0f0f12;
-main
-            --text: #111;
-            --muted: #666;
-            --primary: #ff6900;
-            --card-bg: #fff;
-            --radius: 18px;
-codex/optimize-website-with-new-products-72s461
-        }
-
-        * { box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            margin: 0;
-            font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-            color: var(--text);
-            background: #f5f5f7;
-        }
-
-        .header {
-            position: sticky;
-            top: 0;
-            z-index: 20;
-            background: rgba(15, 15, 18, 0.9);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255,255,255,.08);
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding: 14px 5vw;
-            min-height: 72px;
-        }
-
-        .header-logo {
-            width: 42px;
-            height: 42px;
-            border-radius: 10px;
-            position: absolute;
-            left: 5vw;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .header-title {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            color: #fff;
-            font-size: 22px;
-            font-weight: 600;
-            letter-spacing: .4px;
-            white-space: nowrap;
-        }
-
-        .lang-switch {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            margin-right: 18px;
-            padding-right: 18px;
-            border-right: 1px solid rgba(255,255,255,.18);
-        }
-
-        .lang-switch a {
-            color: rgba(255,255,255,.78);
-            text-decoration: none;
-            font-size: 12px;
-            letter-spacing: .2px;
-        }
-
-        .lang-switch a.active-lang {
-            color: #fff;
-            font-weight: 600;
-
-        }
-
-        * { box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            margin: 0;
-            font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-            color: var(--text);
-            background: #f5f5f7;
-        }
-
-        .header {
-            position: sticky;
-            top: 0;
-            z-index: 20;
-            background: rgba(15, 15, 18, 0.9);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255,255,255,.08);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 14px 5vw;
-main
-        }
-
-        .brand { display: flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; }
-        .brand img { width: 34px; height: 34px; border-radius: 8px; }
-        .brand strong { font-size: 18px; }
-
-        nav a {
-            color: rgba(255,255,255,.86);
-            text-decoration: none;
-            margin-left: 20px;
-            font-size: 14px;
-        }
-        nav a:hover { color: var(--primary); }
-
-        .hero {
-            background: linear-gradient(120deg, #151519, #20232d);
-            color: #fff;
-            padding: 84px 5vw 64px;
-        }
-
-        .hero-grid {
-            display: grid;
-            gap: 28px;
-            grid-template-columns: 1.2fr .8fr;
-            max-width: 1200px;
-            margin: auto;
-            align-items: center;
-        }
-
-        .hero h1 { font-size: clamp(32px, 4vw, 52px); margin: 0 0 16px; }
-        .hero p { color: rgba(255,255,255,.78); max-width: 620px; font-size: 18px; margin: 0; }
-        .hero .cta { margin-top: 28px; display: inline-block; background: var(--primary); color: #fff; padding: 12px 26px; border-radius: 999px; text-decoration: none; }
-codex/optimize-website-with-new-products-72s461
-
-        .hero .cta:hover { filter: brightness(1.06); }
-main
-
-        .hero-panel {
-            background: linear-gradient(160deg, rgba(255,255,255,.1), rgba(255,255,255,.03));
-            border: 1px solid rgba(255,255,255,.14);
-            border-radius: var(--radius);
-            padding: 24px;
-        }
-
-        .hero-panel h3 { margin: 0 0 14px; }
-        .hero-panel ul { margin: 0; padding-left: 18px; color: rgba(255,255,255,.85); line-height: 1.8; }
-
-        .section { max-width: 1200px; margin: auto; padding: 70px 5vw; }
-        .section-title { text-align: center; margin-bottom: 36px; font-size: 32px; }
-
-        .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: var(--card-bg);
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: 0 10px 28px rgba(12, 12, 15, 0.07);
-            transition: transform .25s ease, box-shadow .25s ease;
-codex/optimize-website-with-new-products-72s461
-        }
-        .card:hover { transform: translateY(-6px); box-shadow: 0 16px 34px rgba(12,12,15,.14); }
-
-        .card img { width: 100%; height: 230px; object-fit: cover; display: block; }
-        .card-content { padding: 18px; }
-        .card h3 { margin: 0 0 8px; font-size: 20px; }
-        .card p { margin: 0; color: var(--muted); font-size: 14px; }
-
-        .stats {
-            background: #fff;
-            border-radius: var(--radius);
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            padding: 24px;
-            text-align: center;
-        }
-
-        .stats strong { display: block; font-size: 30px; color: var(--primary); }
-        .stats span { color: var(--muted); font-size: 14px; }
-
-
-        }
-        .card:hover { transform: translateY(-6px); box-shadow: 0 16px 34px rgba(12,12,15,.14); }
-
-        .card img { width: 100%; height: 230px; object-fit: cover; display: block; }
-        .card-content { padding: 18px; }
-        .card h3 { margin: 0 0 8px; font-size: 20px; }
-        .card p { margin: 0; color: var(--muted); font-size: 14px; }
-
-        .stats {
-            background: #fff;
-            border-radius: var(--radius);
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            padding: 24px;
-            text-align: center;
-        }
-        .stats strong { display: block; font-size: 30px; color: var(--primary); }
-        .stats span { color: var(--muted); font-size: 14px; }
-
-main
-        .contact {
-            text-align: center;
-            background: #111;
-            color: #fff;
-            border-radius: var(--radius);
-            padding: 42px 24px;
-        }
-
-        .contact a { color: #fff; }
-        .whatsapp {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            background: #25d366;
-            color: #fff;
-            display: grid;
-            place-items: center;
-            text-decoration: none;
-            font-weight: 700;
-        }
-
-        footer { text-align: center; color: #888; padding: 22px 0 40px; }
-
-        @media (max-width: 900px) {
-            .hero-grid { grid-template-columns: 1fr; }
-            .stats { grid-template-columns: 1fr; }
-            nav { display: none; }
-codex/optimize-website-with-new-products-72s461
-            .header-title { font-size: 18px; }
-
-main
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Velmora | Smart Living Starts Here</title>
+  <meta name="description" content="Velmora designs premium small kitchen appliances for global buyers and OEM/ODM partners." />
+  <link rel="icon" href="logo.png" />
+  <style>
+    :root{--bg:#f5f5f7;--text:#111827;--muted:#6b7280;--line:#e5e7eb;--brand:#ff6900;--card:#fff;--dark:#12141a}
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text)}
+    .top{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+    .nav{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)} .brand img{width:34px;height:34px;border-radius:8px}.brand strong{font-size:20px}
+    .menu{display:flex;gap:18px;align-items:center}.menu a{text-decoration:none;color:#374151;font-size:14px}
+    .lang{padding:7px 10px;border:1px solid var(--line);border-radius:999px;background:#fff}
+    .hero{background:linear-gradient(120deg,#161821,#282e3b);color:#fff;padding:64px 20px}
+    .hero-wrap{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+    .hero h1{font-size:clamp(34px,5vw,56px);margin:0 0 10px}.hero p{color:#d1d5db;line-height:1.6;margin:0 0 20px;max-width:620px}
+    .btn{display:inline-block;padding:12px 22px;border-radius:999px;background:var(--brand);color:#fff;text-decoration:none;font-weight:600}
+    .hero img{width:100%;border-radius:18px;display:block}
+    .section{max-width:1200px;margin:0 auto;padding:56px 20px}
+    h2{font-size:32px;margin:0 0 22px;text-align:center}
+    .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 8px 20px rgba(17,24,39,.05)}
+    .card img{width:100%;height:220px;object-fit:cover}.card .c{padding:14px}.card h3{margin:0 0 8px}.card p{margin:0 0 14px;color:var(--muted);font-size:14px}
+    .contact{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;text-align:center}
+    .contact a{color:#111827}
+    footer{text-align:center;color:#6b7280;padding:26px 0 40px}
+    @media (max-width:860px){.hero-wrap{grid-template-columns:1fr}.menu a{display:none}.menu .lang{display:block}}
+  </style>
 </head>
 <body>
-<header class="header">
-codex/optimize-website-with-new-products-72s461
-    <img src="logo.png" alt="Velmora Logo" class="header-logo">
-    <div class="header-title">Velmora Tech</div>
-    <nav>
-        <span class="lang-switch" aria-label="语言设置">
-            <a href="/?lang=en" class="active-lang" lang="en">English</a>
-            <a href="/?lang=zh-CN" lang="zh-CN">中文</a>
-            <a href="/?lang=es" lang="es">Español</a>
-            <a href="/?lang=fr" lang="fr">Français</a>
-            <a href="/?lang=de" lang="de">Deutsch</a>
-            <a href="/?lang=it" lang="it">Italiano</a>
-        </span>
-
-    <a href="#" class="brand">
-        <img src="images/logo.png" alt="Velmora Logo">
-        <strong>Velmora Tech</strong>
-    </a>
-    <nav>
-main
-        <a href="#about">关于我们</a>
-        <a href="#products">产品</a>
-        <a href="#contact">联系</a>
+  <header class="top">
+    <nav class="nav">
+      <a class="brand" href="#home"><img src="logo.png" alt="Velmora logo"><strong>Velmora</strong></a>
+      <div class="menu">
+        <a href="#products" data-i18n="navProducts"></a>
+        <a href="#contact" data-i18n="navContact"></a>
+        <select class="lang" id="lang" aria-label="Language switcher">
+          <option value="en">English</option><option value="es">Español</option><option value="fr">Français</option>
+          <option value="de">Deutsch</option><option value="it">Italiano</option><option value="zh">中文</option>
+        </select>
+      </div>
     </nav>
-</header>
+  </header>
 
-<section class="hero">
-    <div class="hero-grid">
-        <div>
-codex/optimize-website-with-new-products-72s461
-            <img src="logo.png" alt="Velmora 标志" style="width:120px;border-radius:16px;margin-bottom:16px;">
-
-main
-            <h1>像旗舰品牌一样展示产品力</h1>
-            <p>参考国际品牌官网风格，聚焦高颜值视觉与清晰卖点，帮助采购商快速了解您的核心产品与制造能力。</p>
-            <a class="cta" href="#products">查看产品矩阵</a>
-        </div>
-        <aside class="hero-panel">
-            <h3>核心制造能力</h3>
-            <ul>
-                <li>支持 OEM / ODM 定制开发</li>
-                <li>符合 CE / RoHS 等出口标准</li>
-                <li>打样快，交付稳，售后响应快</li>
-            </ul>
-        </aside>
+  <section class="hero" id="home">
+    <div class="hero-wrap">
+      <div>
+        <h1>Velmora</h1>
+        <p data-i18n="heroSubtitle"></p>
+        <a href="#contact" class="btn" data-i18n="heroCta"></a>
+      </div>
+      <img src="hero.jpg" alt="Premium kitchen appliances" />
     </div>
-</section>
+  </section>
 
-<section id="about" class="section">
-    <h2 class="section-title">Velmora 智能厨房解决方案</h2>
-    <div class="stats">
-        <div><strong>20+</strong><span>出口国家和地区</span></div>
-        <div><strong>OEM</strong><span>深度合作模式</span></div>
-        <div><strong>24H</strong><span>快速商务响应</span></div>
-    </div>
-</section>
+  <section class="section" id="products">
+    <h2 data-i18n="productsTitle"></h2>
+    <div class="products" id="productGrid"></div>
+  </section>
 
-<section id="products" class="section">
-    <h2 class="section-title">明星产品</h2>
-    <div class="products">
-        <article class="card">
-codex/optimize-website-with-new-products-72s461
-            <img src="dryer.jpg" alt="奶泡机">
-            <div class="card-content">
-                <h3>奶泡机</h3>
-                <p>细腻奶泡与一键启动，轻松提升咖啡与甜品制作体验。</p>
-
-            <img src="blender.jpg" alt="奶泡机">
-            <div class="card-content">
-                <h3>奶泡机</h3>
-                <p>细腻奶泡，一键冷热双模式，适配家庭与咖啡馆场景。</p>
-main
-            </div>
-        </article>
-
-        <article class="card">
-            <img src="lunchbox.jpg" alt="空气炸锅">
-            <div class="card-content">
-                <h3>空气炸锅</h3>
-codex/optimize-website-with-new-products-72s461
-                <p>高速热风循环，低油烹饪同样酥脆，支持多菜单智能操控。</p>
-                <p>高速热风循环，低油健康烹饪，大容量可视化窗口。</p>
-main
-            </div>
-        </article>
-
-        <article class="card">
-codex/optimize-website-with-new-products-72s461
-            <img src="blender.jpg" alt="搅拌机">
-            <div class="card-content">
-                <h3>搅拌机</h3>
-                <p>高转速刀组快速破壁，果昔、冰沙、辅食都能高效完成。</p>
-
-            <img src="juicer.jpg" alt="搅拌机">
-            <div class="card-content">
-                <h3>搅拌机</h3>
-                <p>高扭矩电机与多档调速，适配果昔、冰沙与辅食制作。</p>
-main
-            </div>
-        </article>
-
-        <article class="card">
-codex/optimize-website-with-new-products-72s461
-            <img src="juicer.jpg" alt="电动咖啡研磨机">
-            <div class="card-content">
-                <h3>电动咖啡研磨机</h3>
-                <p>多档研磨颗粒可调，保证萃取稳定，满足手冲与意式需求。</p>
-
-            <img src="dryer.jpg" alt="电动咖啡研磨机">
-            <div class="card-content">
-                <h3>电动咖啡研磨机</h3>
-                <p>均匀研磨与多刻度调节，提升手冲与意式萃取稳定性。</p>
-main
-            </div>
-        </article>
-    </div>
-</section>
-
-<section id="contact" class="section">
+  <section class="section" id="contact">
     <div class="contact">
-        <h2>联系 Velmora</h2>
-        <p>Email: sales@velmora-tech.com<br>WhatsApp: +86 15810201140</p>
-        <p><a href="https://wa.me/8615810201140" target="_blank" rel="noopener">立即咨询</a></p>
+      <h2 data-i18n="contactTitle"></h2>
+      <p data-i18n="contactDesc"></p>
+      <p>Email: <a href="mailto:sales@velmora-tech.com">sales@velmora-tech.com</a></p>
+      <p>WhatsApp: <a href="https://wa.me/8615810201140" target="_blank" rel="noopener">+86 15810201140</a></p>
     </div>
-</section>
+  </section>
 
-<footer>© 2026 Velmora Tech. All rights reserved.</footer>
-<a href="https://wa.me/8615810201140" class="whatsapp" aria-label="WhatsApp">W</a>
+  <footer>© <span id="year"></span> Velmora · <span data-i18n="slogan"></span></footer>
+
+  <script>
+    const content = {
+      en:{navProducts:"Products",navContact:"Contact",heroSubtitle:"Smart Living Starts Here. Premium small kitchen appliances built for modern homes and global distribution.",heroCta:"Send Inquiry",productsTitle:"Featured Product Categories",contactTitle:"Contact Velmora",contactDesc:"Connect with our team for OEM/ODM and product inquiries.",slogan:"Smart Living Starts Here",products:[
+        {name:"Milk Frother",point:"Rich foam in seconds for café-style drinks.",img:"juicer.jpg"},
+        {name:"Air Fryer",point:"Crispy cooking with less oil and smart controls.",img:"dryer.jpg"},
+        {name:"Personal Blender",point:"Compact high-speed blending for daily nutrition.",img:"blender.jpg"},
+        {name:"Coffee Maker",point:"Consistent aroma extraction with easy cleanup.",img:"lunchbox.jpg"}
+      ]},
+      es:{navProducts:"Productos",navContact:"Contacto",heroSubtitle:"La vida inteligente empieza aquí. Pequeños electrodomésticos premium para hogares modernos y distribución global.",heroCta:"Enviar consulta",productsTitle:"Categorías destacadas",contactTitle:"Contactar a Velmora",contactDesc:"Conecta con nuestro equipo para OEM/ODM y consultas de productos.",slogan:"Smart Living Starts Here",products:[
+        {name:"Milk Frother",point:"Espuma cremosa en segundos para bebidas tipo cafetería.",img:"juicer.jpg"},{name:"Air Fryer",point:"Cocción crujiente con menos aceite y control inteligente.",img:"dryer.jpg"},{name:"Personal Blender",point:"Mezclado compacto y potente para nutrición diaria.",img:"blender.jpg"},{name:"Coffee Maker",point:"Aroma consistente y limpieza sencilla.",img:"lunchbox.jpg"}]},
+      fr:{navProducts:"Produits",navContact:"Contact",heroSubtitle:"La vie intelligente commence ici. Des appareils de cuisine premium pour les foyers modernes et la distribution mondiale.",heroCta:"Envoyer une demande",productsTitle:"Catégories en vedette",contactTitle:"Contacter Velmora",contactDesc:"Contactez notre équipe pour OEM/ODM et demandes produits.",slogan:"Smart Living Starts Here",products:[
+        {name:"Milk Frother",point:"Mousse riche en quelques secondes pour boissons café.",img:"juicer.jpg"},{name:"Air Fryer",point:"Cuisson croustillante avec moins d'huile et contrôle intelligent.",img:"dryer.jpg"},{name:"Personal Blender",point:"Mixage compact haute vitesse pour la nutrition quotidienne.",img:"blender.jpg"},{name:"Coffee Maker",point:"Extraction d'arôme constante et nettoyage facile.",img:"lunchbox.jpg"}]},
+      de:{navProducts:"Produkte",navContact:"Kontakt",heroSubtitle:"Smart Living Starts Here. Premium-Küchengeräte für moderne Haushalte und weltweiten Vertrieb.",heroCta:"Anfrage senden",productsTitle:"Produktkategorien",contactTitle:"Velmora kontaktieren",contactDesc:"Kontaktieren Sie unser Team für OEM/ODM und Produktanfragen.",slogan:"Smart Living Starts Here",products:[
+        {name:"Milk Frother",point:"Cremiger Milchschaum in Sekunden für Café-Getränke.",img:"juicer.jpg"},{name:"Air Fryer",point:"Knuspriges Garen mit weniger Öl und smarter Steuerung.",img:"dryer.jpg"},{name:"Personal Blender",point:"Kompaktes High-Speed-Mixen für tägliche Ernährung.",img:"blender.jpg"},{name:"Coffee Maker",point:"Konstante Aromaextraktion und einfache Reinigung.",img:"lunchbox.jpg"}]},
+      it:{navProducts:"Prodotti",navContact:"Contatto",heroSubtitle:"La vita smart inizia qui. Piccoli elettrodomestici premium per case moderne e distribuzione globale.",heroCta:"Invia richiesta",productsTitle:"Categorie in evidenza",contactTitle:"Contatta Velmora",contactDesc:"Contatta il nostro team per OEM/ODM e richieste prodotto.",slogan:"Smart Living Starts Here",products:[
+        {name:"Milk Frother",point:"Schiuma ricca in pochi secondi per bevande da caffetteria.",img:"juicer.jpg"},{name:"Air Fryer",point:"Cottura croccante con meno olio e controllo smart.",img:"dryer.jpg"},{name:"Personal Blender",point:"Frullatura compatta ad alta velocità per la nutrizione quotidiana.",img:"blender.jpg"},{name:"Coffee Maker",point:"Estrazione dell'aroma costante e pulizia semplice.",img:"lunchbox.jpg"}]},
+      zh:{navProducts:"产品",navContact:"联系",heroSubtitle:"智能生活，从这里开始。为现代家庭与全球渠道打造的高端厨房小家电。",heroCta:"发送询盘",productsTitle:"精选产品分类",contactTitle:"联系 Velmora",contactDesc:"欢迎联系团队，洽谈 OEM/ODM 与产品合作。",slogan:"Smart Living Starts Here",products:[
+        {name:"Milk Frother",point:"数秒打出细腻奶泡，轻松制作咖啡馆风味。",img:"juicer.jpg"},{name:"Air Fryer",point:"少油酥脆烹饪，智能操控更便捷。",img:"dryer.jpg"},{name:"Personal Blender",point:"高速便携搅拌，满足每日营养需求。",img:"blender.jpg"},{name:"Coffee Maker",point:"稳定萃取香气，清洁维护更轻松。",img:"lunchbox.jpg"}]}
+    };
+    const applyLang = (lang) => {
+      const t = content[lang] || content.en;
+      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : lang;
+      document.querySelectorAll('[data-i18n]').forEach(el => el.textContent = t[el.dataset.i18n]);
+      const grid = document.getElementById('productGrid');
+      grid.innerHTML = t.products.map(p => `<article class="card"><img src="${p.img}" alt="${p.name}"><div class="c"><h3>${p.name}</h3><p>${p.point}</p><a class="btn" href="#contact">${t.heroCta}</a></div></article>`).join('');
+    };
+    const select = document.getElementById('lang');
+    select.addEventListener('change', e => applyLang(e.target.value));
+    applyLang('en');
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
