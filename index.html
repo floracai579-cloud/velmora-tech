@@ -1,6 +1,8 @@
 codex/clean-up-and-optimize-velmora-website
 <!DOCTYPE html>
 <html lang="en">
+codex/clean-up-and-optimize-velmora-website
+
 
 codex/clean-up-and-optimize-velmora-website-is96th
 codex/clean-up-and-optimize-velmora-website-is96th
@@ -57,10 +59,13 @@ codex/clean-up-and-optimize-velmora-website-dda7od
 main
  main
  main
+main
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Velmora | Smart Living Starts Here</title>
+codex/clean-up-and-optimize-velmora-website
+
 codex/clean-up-and-optimize-velmora-website
 
 codex/clean-up-and-optimize-velmora-website-ea3p44
@@ -101,12 +106,16 @@ codex/clean-up-and-optimize-velmora-website-p7eyzh
 codex/clean-up-and-optimize-velmora-website-dda7od
 main
 main
+main
   <link rel="icon" href="images/logo.png" />
   <style>
     :root{--bg:#fff;--text:#111827;--muted:#6b7280;--line:#e5e7eb;--soft:#f8fafc;--accent:#ff6900}
     *{box-sizing:border-box}html,body{margin:0}body{font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text)}
     a{text-decoration:none;color:inherit}.container{max-width:1200px;margin:0 auto;padding:0 24px}.hidden{display:none!important}
 codex/clean-up-and-optimize-velmora-website
+
+codex/clean-up-and-optimize-velmora-website
+main
     .top,.nav-wrap,.subnav{background:#fff;border-bottom:1px solid var(--line)} .announce{background:#000;color:#fff;border-bottom:1px solid #1f2937}
     .row{display:flex;align-items:center;justify-content:space-between;gap:10px}.top .row{min-height:48px;padding:4px 0}.announce .row{min-height:40px;padding:2px 0}
     .top-left,.nav-links,.nav-right,.sub-links,.hero-actions,.card-actions,.sugs{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
@@ -118,6 +127,8 @@ codex/clean-up-and-optimize-velmora-website
     .nav{min-height:68px;display:flex;align-items:center;gap:18px}.logo img{height:30px;max-width:120px;object-fit:contain;display:block}
     .nav-links{flex:1;gap:16px}.nav-right{gap:10px}.nav a,.nav button{font-size:14px;color:#1f2937;background:none}.search-trigger{font-size:18px;font-weight:700}.mobile-toggle{display:none}
     .subnav{background:var(--soft)}.subrow{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 0}.sub-title strong{display:block;font-size:22px;line-height:1.2}.sub-title span{font-size:14px;color:var(--muted)}.sub-links a{font-size:14px;color:#374151}
+codex/clean-up-and-optimize-velmora-website
+
 
 
     .top,.nav-wrap,.subnav{background:#fff;border-bottom:1px solid var(--line)} .announce{background:#000;color:#fff;border-bottom:1px solid #1f2937}
@@ -139,12 +150,16 @@ codex/clean-up-and-optimize-velmora-website
     .sub-title strong{display:block;font-size:22px;line-height:1.2}.sub-title span{font-size:14px;color:var(--muted)}.sub-links a{font-size:14px;color:#374151}
 
 main
+main
     .hero{background:linear-gradient(120deg,#f8fafc,#eef2f7);padding:48px 0}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:center}
     .hero h1{margin:0 0 10px;font-size:clamp(30px,4.6vw,52px)}.hero p{margin:0 0 20px;color:var(--muted);line-height:1.55}
     .img{width:100%;display:block;object-fit:cover;background:#eef2f7}.hero-img{height:340px;border-radius:16px}
     .section{padding:52px 0}.section h2{margin:0 0 18px;text-align:center}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
     .card{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}.card .img{height:220px}.card-body{padding:14px}.card p{color:var(--muted);min-height:42px}
 codex/clean-up-and-optimize-velmora-website
+
+codex/clean-up-and-optimize-velmora-website
+main
     .panel{border:1px solid var(--line);border-radius:14px;padding:22px;background:#fff}.panel p{color:var(--muted)}footer{border-top:1px solid var(--line);text-align:center;color:#6b7280;padding:26px 0 38px}
     .overlay{position:fixed;inset:0;background:rgba(17,24,39,.52);display:none;align-items:flex-start;justify-content:center;padding:7vh 14px;z-index:100}.overlay.open{display:flex}
     .search-panel{width:min(900px,100%);background:#fff;border-radius:16px;box-shadow:0 18px 55px rgba(0,0,0,.24);padding:18px}.search-head{display:flex;gap:8px}
@@ -175,6 +190,8 @@ function applyLang(l){cur=l;const d=i18n[l]||i18n.en;document.documentElement.la
 function openSearch(){q('#searchOverlay').classList.add('open');q('#searchInput').focus()}function closeSearch(){q('#searchOverlay').classList.remove('open')}
 q('#openSearch').onclick=openSearch;q('#closeSearch').onclick=closeSearch;q('#searchOverlay').onclick=e=>{if(e.target.id==='searchOverlay')closeSearch()};document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSearch()});q('#searchInput').addEventListener('input',e=>renderSearch(e.target.value));q('#lang').addEventListener('change',e=>applyLang(e.target.value));q('#continueBtn').onclick=()=>applyLang(q('#lang').value);q('#closeMarket').onclick=()=>q('#marketBar').classList.add('hidden');q('#closeAnnounce').onclick=()=>q('#announceBar').classList.add('hidden');q('#openMenu').onclick=()=>q('#navLinks').classList.toggle('open');q('#year').textContent=new Date().getFullYear();applyLang('en');
 </script>
+codex/clean-up-and-optimize-velmora-website
+
 
     .panel{border:1px solid var(--line);border-radius:14px;padding:22px;background:#fff}.panel p{color:var(--muted)}
     footer{border-top:1px solid var(--line);text-align:center;color:#6b7280;padding:26px 0 38px}
@@ -377,6 +394,7 @@ main
  main
 codex/clean-up-and-optimize-velmora-website-ea3p44
 
+main
 main
 main
 main
