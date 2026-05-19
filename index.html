@@ -7,6 +7,8 @@ codex/clean-up-and-optimize-velmora-website
 
 codex/clean-up-and-optimize-velmora-website
 
+codex/clean-up-and-optimize-velmora-website
+
 
 codex/clean-up-and-optimize-velmora-website-is96th
 codex/clean-up-and-optimize-velmora-website-is96th
@@ -66,10 +68,13 @@ main
 main
 main
 main
+main
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Velmora | Smart Living Starts Here</title>
+codex/clean-up-and-optimize-velmora-website
+
 codex/clean-up-and-optimize-velmora-website
   <link rel="icon" href="images/logo.png" />
   <style>
@@ -288,11 +293,16 @@ codex/clean-up-and-optimize-velmora-website
     }
 
 codex/clean-up-and-optimize-velmora-website
+ main
   <link rel="icon" href="images/logo.png" />
   <style>
     :root { --accent:#ff6900; --text:#111827; --muted:#6b7280; --line:#e5e7eb; --bg:#ffffff; --soft:#f8fafc; }
     * { box-sizing:border-box; }
+codex/clean-up-and-optimize-velmora-website
+    body { margin:0; font-family:Inter,"Segoe UI",Arial,sans-serif; color:var(--text); background:var(--bg); }
+
     body { margin:0; font-family:Inter,Segoe UI,Arial,sans-serif; color:var(--text); background:var(--bg); }
+main
     a { color:inherit; text-decoration:none; }
     .container { max-width:1200px; margin:0 auto; padding:0 24px; }
 
@@ -314,7 +324,11 @@ codex/clean-up-and-optimize-velmora-website
     .hero-actions { display:flex; gap:10px; flex-wrap:wrap; }
 
     section { padding:52px 0; }
+codex/clean-up-and-optimize-velmora-website
+    .section-title { margin:0 0 18px; font-size:30px; text-align:left; }
+
     h3.section-title { margin:0 0 18px; font-size:30px; }
+main
     .products { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px; }
     .card { border:1px solid var(--line); border-radius:14px; overflow:hidden; background:#fff; }
     .card img { width:100%; height:220px; object-fit:cover; background:var(--soft); display:block; }
@@ -334,8 +348,19 @@ codex/clean-up-and-optimize-velmora-website
     .overlay.open { display:flex; }
     .panel { width:min(760px,100%); background:#fff; border-radius:14px; padding:16px; box-shadow:0 20px 40px rgba(0,0,0,.2); }
     .panel input { width:100%; height:46px; border:1px solid var(--line); border-radius:10px; padding:0 12px; font-size:16px; }
+codex/clean-up-and-optimize-velmora-website
+    .results { margin-top:12px; display:grid; gap:8px; }
+    .result { border:1px solid var(--line); border-radius:10px; padding:10px; background:#fff; }
+
+    @media (max-width:860px) {
+      .container { padding:0 16px; }
+      .hero h1 { font-size:38px; }
+      .hero h2 { font-size:22px; }
+    }
+
 
     @media (max-width:860px){ .container{padding:0 16px;} .hero h1{font-size:38px;} .hero h2{font-size:22px;} }
+main
 main
   </style>
 </head>
@@ -374,6 +399,87 @@ main
     <div class="container">
       <h3 class="section-title">Products</h3>
       <div class="products">
+codex/clean-up-and-optimize-velmora-website
+        <article class="card"><img src="images/milk-frother.png" alt="Milk Frother" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('afterbegin','<div style=\'height:220px;display:grid;place-items:center;background:#f8fafc;color:#6b7280\'>Image unavailable</div>')" /><div class="card-body"><h4>Milk Frother</h4><p>Rich, silky foam in seconds for café-style beverages.</p><a class="btn btn-primary" href="#contact">Send Inquiry</a></div></article>
+        <article class="card"><img src="images/air-fryer.png" alt="Air Fryer" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('afterbegin','<div style=\'height:220px;display:grid;place-items:center;background:#f8fafc;color:#6b7280\'>Image unavailable</div>')" /><div class="card-body"><h4>Air Fryer</h4><p>Crispy cooking with less oil and precise temperature control.</p><a class="btn btn-primary" href="#contact">Send Inquiry</a></div></article>
+        <article class="card"><img src="images/personal-blender.png" alt="Personal Blender" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('afterbegin','<div style=\'height:220px;display:grid;place-items:center;background:#f8fafc;color:#6b7280\'>Image unavailable</div>')" /><div class="card-body"><h4>Personal Blender</h4><p>Compact, high-speed blending for daily nutrition.</p><a class="btn btn-primary" href="#contact">Send Inquiry</a></div></article>
+        <article class="card"><img src="images/coffee-maker.png" alt="Coffee Maker" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('afterbegin','<div style=\'height:220px;display:grid;place-items:center;background:#f8fafc;color:#6b7280\'>Image unavailable</div>')" /><div class="card-body"><h4>Coffee Maker</h4><p>Reliable extraction and easy operation for consistent flavor.</p><a class="btn btn-primary" href="#contact">Send Inquiry</a></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="oem">
+    <div class="container">
+      <h3 class="section-title">OEM/ODM Advantages</h3>
+      <div class="oem-grid">
+        <div class="oem-item">OEM/ODM Support</div>
+        <div class="oem-item">Export-ready Quality</div>
+        <div class="oem-item">Flexible Customization</div>
+        <div class="oem-item">Fast Response</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h3 class="section-title">Contact</h3>
+      <div class="contact">
+        <p>Email: <a href="mailto:sales@velmora-tech.com">sales@velmora-tech.com</a></p>
+        <p>WhatsApp: <a href="https://wa.me/8615810201140" target="_blank" rel="noopener">+86 15810201140</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">© 2026 Velmora. All rights reserved.</div>
+  </footer>
+
+  <div class="overlay" id="searchOverlay">
+    <div class="panel" role="dialog" aria-label="Search panel">
+      <input id="searchInput" placeholder="Search products" />
+      <div id="searchResults" class="results"></div>
+    </div>
+  </div>
+
+  <script>
+    const searchItems = [
+      { title: 'Milk Frother', target: '#products' },
+      { title: 'Air Fryer', target: '#products' },
+      { title: 'Personal Blender', target: '#products' },
+      { title: 'Coffee Maker', target: '#products' },
+      { title: 'OEM/ODM', target: '#oem' },
+      { title: 'Contact', target: '#contact' }
+    ];
+    const overlay = document.getElementById('searchOverlay');
+    const openBtn = document.getElementById('openSearch');
+    const input = document.getElementById('searchInput');
+    const results = document.getElementById('searchResults');
+
+    function renderResults(query) {
+      const q = query.trim().toLowerCase();
+      const matched = searchItems.filter(item => item.title.toLowerCase().includes(q));
+      results.innerHTML = matched.length
+        ? matched.map(item => `<a class="result" href="${item.target}">${item.title}</a>`).join('')
+        : '<div class="result">No results found.</div>';
+      results.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          overlay.classList.remove('open');
+          document.querySelector(link.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+    }
+
+    openBtn.addEventListener('click', () => {
+      overlay.classList.add('open');
+      input.focus();
+      renderResults('');
+    });
+    input.addEventListener('input', () => renderResults(input.value));
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.classList.remove('open'); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') overlay.classList.remove('open'); });
+  </script>
+
         <article class="card">
 codex/clean-up-and-optimize-velmora-website
           <img src="images/milk-frother.png" alt="Milk Frother" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('afterbegin','<div style=\'height:220px;display:grid;place-items:center;background:#f8fafc;color:#6b7280\'>Image unavailable</div>')" />
@@ -865,6 +971,7 @@ main
  main
 codex/clean-up-and-optimize-velmora-website-ea3p44
 
+main
 main
 main
 main
