@@ -16,23 +16,24 @@ function applyDisplayFixes() {
       .product-visual,.featured-visual{background:#fff!important;border:1px solid rgba(0,0,0,.045)!important}
       .product-visual img{width:min(88%,245px)!important;height:min(88%,245px)!important;object-fit:contain!important}
       .featured-visual img{object-fit:contain!important}
-      .footer-hub{width:100%!important;max-width:none!important;display:grid!important;grid-template-columns:minmax(180px,.78fr) minmax(150px,.72fr) minmax(180px,.82fr) minmax(270px,1fr) minmax(320px,1.16fr)!important;gap:clamp(28px,4vw,68px)!important;margin:0 auto!important;padding:88px max(28px,calc((100vw - 1320px)/2 + 28px))!important;align-items:start!important;background:#050505!important;color:#fff!important}
-      .footer-brand{align-self:start!important;justify-self:center!important}
-      .footer-brand img{background:#050505!important;border-radius:10px!important;padding:0!important;filter:invert(1)!important}
-      .footer-column,.footer-contact,.footer-social{justify-self:center!important;text-align:center!important}
-      .footer-social{padding-right:clamp(18px,3vw,52px)!important}
+      .footer-hub{width:100%!important;max-width:none!important;display:grid!important;grid-template-columns:minmax(210px,.9fr) minmax(150px,.68fr) minmax(180px,.76fr) minmax(250px,.92fr) minmax(320px,1.05fr)!important;gap:clamp(30px,4vw,64px)!important;margin:0 auto!important;padding:88px max(28px,calc((100vw - 1320px)/2 + 28px))!important;align-items:start!important;background:#050505!important;color:#fff!important}
+      .footer-brand{align-self:start!important;justify-self:start!important}
+      .footer-brand img{width:min(240px,100%)!important;height:auto!important;object-fit:contain!important;background:transparent!important;border-radius:0!important;padding:0!important;filter:none!important}
+      .footer-column,.footer-contact,.footer-social{justify-self:start!important;text-align:left!important}
+      .footer-social{padding-right:clamp(24px,4vw,72px)!important}
       .footer-column h2,.footer-social h2{color:#fff!important;margin-top:0!important}
       .footer-column a,.footer-social p{color:rgba(245,245,247,.68)!important}
-      .footer-contact a{display:grid!important;justify-items:center!important}
+      .footer-contact a{display:grid!important;justify-items:start!important}
       .footer-contact span{color:rgba(245,245,247,.58)!important}
-      .social-links{justify-content:center!important}
+      .social-links{justify-content:flex-start!important}
       .social-links a{font-size:0!important}
       .social-links a{background:rgba(255,255,255,.12)!important;color:rgba(255,255,255,.82)!important}
       .social-links svg{width:18px;height:18px;fill:currentColor}
+      .newsletter-form{margin-inline:0!important}
       .site-footer{background:#050505!important;color:rgba(245,245,247,.52)!important;border-top:1px solid rgba(255,255,255,.1)!important}
       .footer-hub::before,.social-links a::before{content:none!important;display:none!important}
       @media (max-width:1024px){.footer-hub{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
-      @media (max-width:640px){.brand{width:124px!important}.brand img{width:112px!important}.footer-hub{grid-template-columns:1fr!important;gap:34px!important}}
+      @media (max-width:640px){.brand{width:124px!important}.brand img{width:112px!important}.footer-hub{grid-template-columns:1fr!important;gap:34px!important;padding-inline:24px!important}.footer-social{padding-right:0!important}}
     `;
     document.head.appendChild(style);
   }
@@ -62,7 +63,14 @@ function applyDisplayFixes() {
     if (index > 0) brand.remove();
   });
   if (footerHub && !footerHub.querySelector(".footer-brand")) {
-    footerHub.insertAdjacentHTML("afterbegin", '<div class="footer-brand"><img src="assets/images/velmora-logo-full-white.jpg" alt="Velmora full logo" width="700" height="233" loading="lazy" decoding="async"></div>');
+    footerHub.insertAdjacentHTML("afterbegin", '<div class="footer-brand"><img src="assets/images/velmora-logo-full-black.jpg" alt="Velmora full logo" width="700" height="175" loading="lazy" decoding="async"></div>');
+  }
+  const footerLogo = footerHub?.querySelector(".footer-brand img");
+  if (footerLogo) {
+    footerLogo.src = "assets/images/velmora-logo-full-black.jpg";
+    footerLogo.width = 700;
+    footerLogo.height = 175;
+    footerLogo.alt = "Velmora full logo";
   }
 
   const social = document.querySelector(".social-links");
