@@ -63,13 +63,13 @@ function applyDisplayFixes() {
     if (index > 0) brand.remove();
   });
   if (footerHub && !footerHub.querySelector(".footer-brand")) {
-    footerHub.insertAdjacentHTML("afterbegin", '<div class="footer-brand"><img src="assets/images/velmora-logo-full-black.jpg" alt="Velmora full logo" width="700" height="175" loading="lazy" decoding="async"></div>');
+    footerHub.insertAdjacentHTML("afterbegin", '<div class="footer-brand"><img src="assets/images/velmora-footer-logo-correct.png" alt="Velmora full logo" width="999" height="333" loading="lazy" decoding="async"></div>');
   }
   const footerLogo = footerHub?.querySelector(".footer-brand img");
   if (footerLogo) {
-    footerLogo.src = "assets/images/velmora-logo-full-black.jpg";
-    footerLogo.width = 700;
-    footerLogo.height = 175;
+    footerLogo.src = "assets/images/velmora-footer-logo-correct.png";
+    footerLogo.width = 999;
+    footerLogo.height = 333;
     footerLogo.alt = "Velmora full logo";
   }
 
