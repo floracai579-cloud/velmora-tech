@@ -1,52 +1,8 @@
-const displayCopy = {
-  en: {
-    tagRetail: "Retail",
-    tagEcommerce: "E-commerce",
-    tagGiftPrograms: "Gift programs",
-    tagHospitality: "Hospitality",
-    tagCapacity: "Capacity",
-    tagVoltage: "Voltage",
-    tagPlugType: "Plug type",
-    tagMaterial: "Material",
-    tagLogo: "Logo",
-    tagColor: "Color",
-    tagPackaging: "Packaging",
-    tagManual: "Manual",
-    tagMilkFrothers: "Milk Frothers",
-    tagAirFryerOvens: "Air Fryer Ovens",
-    tagCoffeeAppliances: "Coffee Appliances"
-  },
-  zh: {
-    tagRetail: "零售",
-    tagEcommerce: "电商",
-    tagGiftPrograms: "礼品项目",
-    tagHospitality: "酒店与商用",
-    tagCapacity: "容量",
-    tagVoltage: "电压",
-    tagPlugType: "插头类型",
-    tagMaterial: "材质",
-    tagLogo: "Logo",
-    tagColor: "颜色",
-    tagPackaging: "包装",
-    tagManual: "说明书",
-    tagMilkFrothers: "奶泡器",
-    tagAirFryerOvens: "空气炸锅烤箱",
-    tagCoffeeAppliances: "咖啡类小家电"
-  }
-};
-
-const productImageMap = new Map([
-  ["Milk Frothers", "assets/images/milk-frother.jpg"],
-  ["奶泡器", "assets/images/milk-frother.jpg"],
-  ["Air Fryer Ovens", "assets/images/air-fryer-oven.jpg"],
-  ["空气炸锅烤箱", "assets/images/air-fryer-oven.jpg"],
-  ["Coffee Appliances", "assets/images/coffee-appliance.jpg"],
-  ["咖啡类小家电", "assets/images/coffee-appliance.jpg"]
-]);
-
-function currentLanguage() {
-  return document.documentElement.lang.toLowerCase().startsWith("zh") ? "zh" : "en";
-}
+const productImages = [
+  "assets/images/milk-frother.jpg",
+  "assets/images/air-fryer-oven.jpg",
+  "assets/images/coffee-appliance.jpg"
+];
 
 function applyDisplayFixes() {
   if (!document.getElementById("velmora-targeted-fixes")) {
@@ -81,24 +37,9 @@ function applyDisplayFixes() {
     document.head.appendChild(style);
   }
 
-  const copy = displayCopy[currentLanguage()];
-  document.querySelectorAll("[data-i18n]").forEach((node) => {
-    const value = copy[node.dataset.i18n];
-    if (value) node.textContent = value;
-  });
-
-  const tagText = Object.fromEntries(Object.values(displayCopy).flatMap((languageCopy) =>
-    Object.entries(languageCopy).map(([key, value]) => [value, copy[key] || value])
-  ));
-  document.querySelectorAll(".tag-row span, .product-meta span").forEach((tag) => {
-    const value = tagText[tag.textContent.trim()];
-    if (value) tag.textContent = value;
-  });
-
-  document.querySelectorAll(".product-card").forEach((card) => {
-    const title = card.querySelector("h3")?.textContent.trim();
+  document.querySelectorAll(".product-card").forEach((card, index) => {
     const image = card.querySelector(".product-visual img");
-    const src = productImageMap.get(title);
+    const src = productImages[index];
     if (!src || !image) return;
     image.src = src;
     image.width = 360;
