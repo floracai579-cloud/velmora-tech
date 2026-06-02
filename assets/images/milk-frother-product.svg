@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" role="img" aria-label="Stainless steel electric milk frother">
+  <rect width="1200" height="1200" fill="#fff"/>
+  <ellipse cx="600" cy="1000" rx="260" ry="38" fill="#d7d7d7" opacity=".55"/>
+  <linearGradient id="steel" x1="0" x2="1">
+    <stop offset="0" stop-color="#f8f8f8"/>
+    <stop offset=".16" stop-color="#9fa3a8"/>
+    <stop offset=".35" stop-color="#ffffff"/>
+    <stop offset=".62" stop-color="#cfd2d6"/>
+    <stop offset=".82" stop-color="#73777d"/>
+    <stop offset="1" stop-color="#f7f7f7"/>
+  </linearGradient>
+  <linearGradient id="black" x1="0" x2="1">
+    <stop offset="0" stop-color="#222"/>
+    <stop offset=".5" stop-color="#050505"/>
+    <stop offset="1" stop-color="#303030"/>
+  </linearGradient>
+  <ellipse cx="600" cy="252" rx="210" ry="64" fill="url(#steel)" stroke="#5b5d60" stroke-width="6"/>
+  <path d="M392 250h416l-54 670c-8 76-72 118-154 118s-146-42-154-118z" fill="url(#steel)" stroke="#6f7378" stroke-width="8"/>
+  <ellipse cx="600" cy="252" rx="168" ry="42" fill="#111" opacity=".9"/>
+  <ellipse cx="600" cy="922" rx="154" ry="44" fill="#f2f2f2" stroke="#9ca0a5" stroke-width="5"/>
+  <rect x="502" y="412" width="196" height="110" rx="22" fill="url(#black)"/>
+  <circle cx="600" cy="600" r="54" fill="#101010" stroke="#e7e7e7" stroke-width="5"/>
+  <circle cx="600" cy="600" r="23" fill="#d9d9d9"/>
+  <path d="M455 300c55 35 214 38 290 3" fill="none" stroke="#fff" stroke-width="18" opacity=".32"/>
+  <path d="M440 314l-42 602" stroke="#fff" stroke-width="32" opacity=".28"/>
+  <path d="M760 310l-44 620" stroke="#1e1e1e" stroke-width="24" opacity=".18"/>
+</svg>
