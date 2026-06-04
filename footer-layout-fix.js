@@ -11,6 +11,8 @@
     const style = document.createElement("style");
     style.id = "velmora-footer-layout-fix";
     style.textContent = `
+      .product-insights-section,.quick-strip,.buyer-section{display:none!important}
+      .eyebrow-hidden{display:none!important}
       .footer-brand{display:none!important}
       .footer-hub{grid-template-columns:minmax(160px,.8fr) minmax(180px,.9fr) minmax(230px,1fr) minmax(280px,1.1fr)!important;gap:clamp(34px,4vw,72px)!important;align-items:start!important}
       .footer-column,.footer-contact,.footer-social{justify-self:start!important;text-align:left!important}
