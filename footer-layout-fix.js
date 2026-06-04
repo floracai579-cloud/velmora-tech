@@ -1,8 +1,8 @@
 (() => {
   const productImages = [
-    "assets/product-milk-frother.svg",
-    "assets/product-air-fryer.svg",
-    "assets/product-coffee-appliance.svg"
+    "assets/images/milk-frother.jpg",
+    "assets/images/air-fryer-oven.jpg",
+    "assets/images/coffee-appliance.jpg"
   ];
 
   function applyFooterLayoutFix() {
