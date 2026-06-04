@@ -4,6 +4,7 @@
     "assets/images/air-fryer-oven.jpg",
     "assets/images/coffee-appliance.jpg"
   ];
+  const catalogEmailHref = "mailto:sales@velmora-tech.com?subject=Velmora%20Product%20Catalog%20Request&body=Hello%20Velmora%2C%0A%0APlease%20send%20me%20your%20product%20catalog.%0A%0AThank%20you.";
 
   function applyFooterLayoutFix() {
     if (document.getElementById("velmora-footer-layout-fix")) return;
@@ -50,9 +51,18 @@
     });
   }
 
+  function applyCatalogEmailFix() {
+    document.querySelectorAll('a[data-i18n="navCatalog"], a[data-i18n="rfqCatalogCta"]').forEach((link) => {
+      link.href = catalogEmailHref;
+      link.removeAttribute("target");
+      link.removeAttribute("rel");
+    });
+  }
+
   function applyFixes() {
     applyFooterLayoutFix();
     applyProductImageIntegrityFix();
+    applyCatalogEmailFix();
   }
 
   window.addEventListener("DOMContentLoaded", applyFixes);
